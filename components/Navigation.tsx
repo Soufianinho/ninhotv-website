@@ -27,8 +27,27 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
     setIsMenuOpen(false);
   };
 
+  const navigateToPage = (path: string) => {
+    window.location.href = path;
+    setIsMenuOpen(false);
+  };
+
+  const handleHomeClick = () => {
+    // Check if we're on the home page
+    if (typeof window !== 'undefined' && window.location.pathname === '/') {
+      scrollToSection('#home');
+    } else {
+      navigateToPage('/');
+    }
+  };
+
   const handleFreeTrial = () => {
-    scrollToSection('#pricing');
+    // Check if we're on the home page
+    if (typeof window !== 'undefined' && window.location.pathname === '/') {
+      scrollToSection('#pricing');
+    } else {
+      navigateToPage('/#pricing');
+    }
   };
 
   return (
@@ -54,18 +73,27 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {[
-              { name: 'Home', href: '#home' },
-              { name: 'Channels', href: '#channels' },
-              { name: 'Features', href: '#features' },
-              { name: 'Pricing', href: '#pricing' },
-              { name: 'FAQ', href: '#faq' }
+              { name: 'Home', href: '#home', action: 'custom', handler: handleHomeClick },
+              { name: 'Channels', href: '#channels', action: 'scroll' },
+              { name: 'IPTV reseller', href: '/reseller', action: 'navigate' },
+              { name: 'Features', href: '#features', action: 'scroll' },
+              { name: 'Pricing', href: '/pricing', action: 'navigate' },
+              { name: 'FAQ', href: '#faq', action: 'scroll' }
             ].map((item, index) => (
               <motion.button
                 key={item.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => {
+                  if (item.action === 'custom' && item.handler) {
+                    item.handler();
+                  } else if (item.action === 'navigate') {
+                    navigateToPage(item.href);
+                  } else {
+                    scrollToSection(item.href);
+                  }
+                }}
                 className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
               >
                 {item.name}

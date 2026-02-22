@@ -8,7 +8,7 @@ export default function Footer() {
 
   const footerLinks = [
     {
-      title: 'Service',
+      title: 'Pages',
       links: [
         { name: 'Channels', href: '#channels' },
         { name: 'Features', href: '#features' },
@@ -21,7 +21,7 @@ export default function Footer() {
       links: [
         { name: 'FAQ', href: '#faq' },
         { name: 'Contact', href: 'https://wa.me/212639040826' },
-        { name: 'Help Center', href: '#' }
+        { name: 'Help Center', href: '/help' }
       ]
     },
     {
@@ -33,6 +33,7 @@ export default function Footer() {
         { name: 'DMCA', href: '/dmca' }
       ]
     }
+    
   ];
 
   const socialLinks = [

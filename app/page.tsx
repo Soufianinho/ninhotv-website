@@ -2,8 +2,10 @@ import { Metadata } from 'next';
 import Layout from '@/components/Layout';
 import Hero from '@/components/Hero';
 import Channels from '@/components/Channels';
+import AppScreenshots from '@/components/AppScreenshots';
 import Features from '@/components/Features';
 import Pricing from '@/components/Pricing';
+import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 
 export const metadata: Metadata = {
@@ -36,9 +38,11 @@ export default function HomePage() {
   return (
     <Layout>
       <Hero />
-      <Channels />
-      <Features />
       <Pricing />
+      <Channels />
+      <AppScreenshots />
+      <Features />
+      <Reviews />
       <FAQ />
     </Layout>
   );

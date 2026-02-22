@@ -8,44 +8,44 @@ const channelCategories = [
   {
     name: 'UK Sports Channels',
     icon: 'mdi:soccer',
-    channels: ['Sky Sports UK', 'BT Sport UK', 'Premier League UK', 'BBC Sport', 'ITV Sport', 'Eurosport UK', 'BoxNation UK'],
+    channels: ['Sky Sports UK', 'BT Sport UK', 'Premier League UK', 'BBC Sport', 'ITV Sport', 'Eurosport UK', 'BoxNation UK','UFC'],
     description: 'Watch all UK sports events live including Premier League, FA Cup, and more',
-    image: 'https://wiztv.co.uk/wp-content/uploads/2025/10/iptv-uk-1.png'
+    image: 'https://www.androidauthority.com/wp-content/uploads/2025/05/Samsung-TV-Plus-new-sports-channels.jpg'
   },
   {
     name: 'UK Entertainment',
     icon: 'mdi:movie-open',
     channels: ['BBC iPlayer', 'ITV Hub', 'All 4', 'Channel 4', 'Channel 5', 'Sky Atlantic', 'NOW TV'],
     description: 'Popular UK entertainment channels and streaming services',
-    image: 'https://wiztv.co.uk/wp-content/uploads/2025/12/jifhujghfyeyg.webp'
+    image: 'https://static.independent.co.uk/2023/09/18/00/34301626cbbb3d454de44a8998d98c47Y29udGVudHNlYXJjaGFwaSwxNjk0ODc1MDIw-2.41916672.jpg?width=1200&auto=webp'
   },
   {
     name: 'UK News Channels',
     icon: 'mdi:newspaper',
     channels: ['BBC News', 'Sky News', 'ITV News', 'Channel 4 News', 'GB News', 'BBC World'],
     description: 'Stay updated with UK and global news 24/7',
-    image: 'https://wiztv.co.uk/wp-content/uploads/2025/10/iptv-uk-2.png'
+    image: 'https://www.nationalworld.com/jpim-static/image/2023/07/10/16/NWLD-composite-news-km.jpg?width=1200&auto=webp&quality=75&trim=0,0,0,0&crop='
   },
   {
     name: 'International Channels',
     icon: 'mdi:earth',
     channels: ['France 24', 'Germany TV', 'Spain TV', 'Italy TV', 'Portugal TV', 'Netherlands TV', 'Belgium TV', 'Switzerland TV'],
     description: 'Channels from all European countries',
-    image: 'https://wiztv.co.uk/wp-content/uploads/2025/10/iptv-uk-1.png'
+    image: 'https://tse2.mm.bing.net/th/id/OIP.lItwLxCmGHAinmo0cfWnTAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3'
   },
   {
     name: 'Kids & Family',
     icon: 'mdi:human-child',
     channels: ['CBeebies', 'CBBC', 'Nickelodeon UK', 'Cartoon Network UK', 'Disney Channel UK', 'Pop Kids'],
     description: 'Safe and entertaining content for UK kids and families',
-    image: 'https://wiztv.co.uk/wp-content/uploads/2025/12/jifhujghfyeyg.webp'
+    image: 'https://tse1.mm.bing.net/th/id/OIP.qx1Oku1Y33xX2tj6t1gAcgHaFy?rs=1&pid=ImgDetMain&o=7&rm=3'
   },
   {
     name: 'Music & Culture',
     icon: 'mdi:music',
     channels: ['MTV UK', 'VH1', 'Kiss TV', 'The Box', 'Heart TV', 'Capital TV', 'Magic TV'],
     description: 'UK music channels and cultural programming',
-    image: 'https://wiztv.co.uk/wp-content/uploads/2025/10/iptv-uk-2.png'
+    image: 'https://th.bing.com/th/id/R.5ffd7cdbdf0d68e8a9e0515963c0230d?rik=vt7iC3dNNUGtOQ&pid=ImgRaw&r=0'
   }
 ];
 

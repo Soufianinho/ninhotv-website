@@ -41,7 +41,7 @@ const devicePricing = {
   3: 2.0      // 100% more
 };
 
-export default function Pricing() {
+export default function PricingPage() {
   const [selectedDevices, setSelectedDevices] = useState(1);
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
 
@@ -71,30 +71,28 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="container mx-auto px-4 py-20">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Simple <span className="text-red-500">Pricing</span>
-          </h2>
+          </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Choose the perfect plan for your entertainment needs. All plans include full access to our UK IPTV service.
           </p>
         </motion.div>
 
-        {/* Device Selection */}
+        {/* Device Selection - New Design */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          viewport={{ once: true }}
           className="bg-gray-800 rounded-2xl p-8 mb-12 max-w-4xl mx-auto border border-gray-700"
         >
           <div className="text-center mb-6">
@@ -132,9 +130,8 @@ export default function Pricing() {
               <motion.div
                 key={option.devices}
                 initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 onClick={() => setSelectedDevices(option.devices)}
                 className={`relative bg-gradient-to-br ${option.color} rounded-xl p-6 cursor-pointer transition-all duration-300 ${
                   selectedDevices === option.devices 
@@ -174,9 +171,8 @@ export default function Pricing() {
         {/* Free Trial CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
           className="bg-gradient-to-r from-green-600 to-green-500 rounded-2xl p-8 mb-12 max-w-4xl mx-auto"
         >
           <div className="text-center">
@@ -200,14 +196,13 @@ export default function Pricing() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
               whileHover={{ y: -10 }}
               className={`relative bg-gray-800 rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
                 plan.popular 
@@ -269,10 +264,9 @@ export default function Pricing() {
         {/* Trust Badges */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="text-center"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
             {[
@@ -284,9 +278,8 @@ export default function Pricing() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                viewport={{ once: true }}
                 className="text-center"
               >
                 <Icon icon={badge.icon} className="w-8 h-8 text-red-500 mx-auto mb-2" />
@@ -295,7 +288,25 @@ export default function Pricing() {
             ))}
           </div>
         </motion.div>
+
+        {/* Back to Home */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="text-center mt-12"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.location.href = '/'}
+            className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            <Icon icon="mdi:home" className="inline-block w-5 h-5 mr-2" />
+            Back to Home
+          </motion.button>
+        </motion.div>
       </div>
-    </section>
+    </div>
   );
 }
