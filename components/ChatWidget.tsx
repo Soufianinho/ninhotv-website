@@ -1,0 +1,60 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Icon } from '@iconify/react';
+
+export default function ChatWidget() {
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/212639040826?text=Hi! I am interested in NinhoTV IPTV service.', '_blank');
+  };
+
+  const handleTelegramClick = () => {
+    window.open('https://t.me/ninhotv', '_blank');
+  };
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
+      {/* WhatsApp Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={handleWhatsAppClick}
+        className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-green-500/25 transition-all duration-200"
+        title="Chat on WhatsApp"
+      >
+        <Icon icon="mdi:whatsapp" className="w-6 h-6" />
+      </motion.button>
+
+      {/* Telegram Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={handleTelegramClick}
+        className="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-200"
+        title="Join Telegram"
+      >
+        <Icon icon="mdi:telegram" className="w-6 h-6" />
+      </motion.button>
+
+      {/* Pulse Animation for WhatsApp */}
+      <motion.div
+        className="absolute bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0, 0.3]
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+    </div>
+  );
+}
