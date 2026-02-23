@@ -7,6 +7,7 @@ import Features from '@/components/Features';
 import Pricing from '@/components/Pricing';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
+import PaymentMethods from '@/components/PaymentMethods';
 
 export const metadata: Metadata = {
   title: 'NinhoTV - Best IPTV UK Service | 33,000+ Live Channels | Premium Streaming',
@@ -42,6 +43,7 @@ export default function HomePage() {
       <Channels />
       <AppScreenshots />
       <Features />
+      <PaymentMethods />
       <Reviews />
       <FAQ />
     </Layout>
