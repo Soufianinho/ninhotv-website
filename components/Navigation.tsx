@@ -101,7 +101,7 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - Desktop Only */}
           <div className="hidden lg:block">
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
@@ -114,18 +114,23 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
             </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-white p-2"
-          >
-            <Icon 
-              icon={isMenuOpen ? "mdi:close" : "mdi:menu"} 
-              className="w-6 h-6" 
-            />
-          </motion.button>
+          {/* Spacer for mobile layout */}
+          <div className="flex-1 lg:hidden"></div>
+
+          {/* Mobile Menu Button - Hidden since we use bottom nav */}
+          <div className="hidden">
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden text-white p-2"
+            >
+              <Icon 
+                icon={isMenuOpen ? "mdi:close" : "mdi:menu"} 
+                className="w-6 h-6" 
+              />
+            </motion.button>
+          </div>
         </div>
       </div>
     </motion.nav>

@@ -16,7 +16,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden pt-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-transparent to-blue-500/10"></div>
@@ -63,17 +63,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-6"
-            >
-              <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
-                <Icon icon="mdi:television-classic" className="w-12 h-12 text-red-500" />
-                <span className="text-4xl font-bold text-white">Ninho<span className="text-red-500">TV</span></span>
-              </div>
-            </motion.div>
+           
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}

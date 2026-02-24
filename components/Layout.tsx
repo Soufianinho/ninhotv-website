@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import Navigation from './Navigation';
+import BottomNavigation from './BottomNavigation';
 import Footer from './Footer';
 import ChatWidget from './ChatWidget';
 
@@ -93,12 +94,13 @@ export default function Layout({ children }: LayoutProps) {
         </motion.div>
       )}
       
-      <main className="relative">
+      <main className="relative pb-20 lg:pb-0">
         {children}
       </main>
       
       <Footer />
       <ChatWidget />
+      <BottomNavigation />
     </div>
   );
 }
