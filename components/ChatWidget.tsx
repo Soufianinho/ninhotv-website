@@ -18,8 +18,8 @@ export default function ChatWidget() {
 
 I would like to inquire about your IPTV service. Could you please provide me with more information?
 
-Thank you,
-[Your Name]`);
+Thank you
+`);
     window.location.href = `mailto:support@ninhotv.net?subject=${subject}&body=${body}`;
   };
 

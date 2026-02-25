@@ -16,24 +16,24 @@ export default function Footer() {
         { name: 'Free Trial', href: '#pricing' }
       ]
     },
-    {
-      title: 'Support',
-      links: [
-        { name: 'FAQ', href: '#faq' },
-        { name: 'Contact', href: 'https://wa.me/212639040826' },
-        { name: 'Help Center', href: '/help' }
-      ]
-    },
+    
     {
       title: 'Legal',
       links: [
         { name: 'Terms of Service', href: '/terms' },
         { name: 'Privacy Policy', href: '/privacy' },
         { name: 'Refund Policy', href: '/refund' },
+        { name: 'Help Center', href: '/help' },
         { name: 'DMCA', href: '/dmca' }
       ]
+    },
+    {
+      title: 'contact us',
+      links: [
+        { name: 'support@ninhotv.net', href: 'mailto:support@ninhotv.net' },
+        { name: 'WhatsApp', href: 'https://wa.me/212639040826' }
+      ]
     }
-    
   ];
 
   const socialLinks = [
