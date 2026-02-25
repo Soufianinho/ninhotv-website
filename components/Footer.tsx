@@ -39,7 +39,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: 'mdi:whatsapp', href: 'https://wa.me/212639040826', label: 'WhatsApp' },
     { icon: 'mdi:telegram', href: 'https://t.me/ninhotv', label: 'Telegram' },
-    { icon: 'mdi:email', href: 'mailto:support@ninhotv.com', label: 'Email' }
+    { icon: 'mdi:email', href: 'mailto:support@ninhotv.net', label: 'Email' }
   ];
 
   const scrollToSection = (sectionId: string) => {

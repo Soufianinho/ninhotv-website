@@ -12,8 +12,33 @@ export default function ChatWidget() {
     window.open('https://t.me/ninhotv', '_blank');
   };
 
+  const handleEmailClick = () => {
+    const subject = encodeURIComponent('NinhoTV Support Request');
+    const body = encodeURIComponent(`Hello NinhoTV Team,
+
+I would like to inquire about your IPTV service. Could you please provide me with more information?
+
+Thank you,
+[Your Name]`);
+    window.location.href = `mailto:support@ninhotv.net?subject=${subject}&body=${body}`;
+  };
+
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
+    <div className="fixed bottom-24 right-6 z-50 flex flex-col space-y-3 lg:bottom-6 lg:right-6">
+      {/* Email Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={handleEmailClick}
+        className="bg-red-500 hover:bg-red-600 text-white p-4 rounded-full shadow-lg hover:shadow-red-500/25 transition-all duration-200"
+        title="Email Support"
+      >
+        <Icon icon="mdi:email" className="w-6 h-6" />
+      </motion.button>
+
       {/* WhatsApp Button */}
       <motion.button
         initial={{ opacity: 0, scale: 0 }}

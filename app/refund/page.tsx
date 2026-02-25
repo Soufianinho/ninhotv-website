@@ -76,10 +76,10 @@ export default function RefundPolicy() {
             <p className="text-gray-300 leading-relaxed mb-6">
               If you have any refund-related queries or concerns, please contact our customer support team at{' '}
               <a 
-                href="mailto:support@ninhotv.com" 
+                href="mailto:support@ninhotv.net" 
                 className="text-red-400 hover:text-red-300 transition-colors duration-200 font-semibold"
               >
-                support@ninhotv.com
+                support@ninhotv.net
               </a>
               . To help us assess the situation, provide a clear problem description and any relevant screenshots or photos.
             </p>

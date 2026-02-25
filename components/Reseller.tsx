@@ -95,7 +95,7 @@ export default function Reseller() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('mailto:support@ninhotv.com?subject=IPTV Reseller Inquiry', '_blank')}
+                onClick={() => window.open('mailto:support@ninhotv.net?subject=IPTV Reseller Inquiry', '_blank')}
                 className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200"
               >
                 <Icon icon="mdi:email" className="inline-block w-6 h-6 mr-2" />

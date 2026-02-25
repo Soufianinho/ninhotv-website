@@ -111,10 +111,10 @@ export default function PrivacyPolicy() {
             <p className="text-gray-300 leading-relaxed mb-4">
               You have the option to opt-out of future communications from NinhoTV. Instructions for opting out are included in our communications. You can also contact us at{' '}
               <a 
-                href="mailto:support@ninhotv.com" 
+                href="mailto:support@ninhotv.net" 
                 className="text-red-400 hover:text-red-300 transition-colors duration-200 font-semibold"
               >
-                support@ninhotv.com
+                support@ninhotv.net
               </a>
               {' '}to manage your communication preferences.
             </p>
@@ -151,10 +151,10 @@ export default function PrivacyPolicy() {
             <p className="text-gray-300 leading-relaxed mb-6">
               If you have any questions, concerns, or requests related to your personal information or this Privacy Policy, please contact us at{' '}
               <a 
-                href="mailto:support@ninhotv.com" 
+                href="mailto:support@ninhotv.net" 
                 className="text-red-400 hover:text-red-300 transition-colors duration-200 font-semibold"
               >
-                support@ninhotv.com
+                support@ninhotv.net
               </a>
               .
             </p>

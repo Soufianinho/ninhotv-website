@@ -38,10 +38,10 @@ export default function DMCA() {
             <p className="text-gray-300 leading-relaxed mb-6">
               If you require any more information or have any questions about our site's disclaimer, please feel free to contact us by email at{' '}
               <a 
-                href="mailto:support@ninhotv.com" 
+                href="mailto:support@ninhotv.net" 
                 className="text-red-400 hover:text-red-300 transition-colors duration-200 font-semibold"
               >
-                support@ninhotv.com
+                support@ninhotv.net
               </a>
             </p>
             
@@ -79,7 +79,7 @@ export default function DMCA() {
                 <div>
                   <h3 className="font-semibold text-white mb-2">Designated Agent</h3>
                   <p className="leading-relaxed">
-                    NinhoTV designates support@ninhotv.com as its agent to receive notifications of claimed copyright infringement.
+                    NinhoTV designates support@ninhotv.net as its agent to receive notifications of claimed copyright infringement.
                   </p>
                 </div>
               </div>
@@ -140,10 +140,10 @@ export default function DMCA() {
                 Email Contact
               </div>
               <a 
-                href="mailto:support@ninhotv.com" 
+                href="mailto:support@ninhotv.net" 
                 className="text-white hover:text-red-400 transition-colors duration-200"
               >
-                support@ninhotv.com
+                support@ninhotv.net
               </a>
             </div>
             
