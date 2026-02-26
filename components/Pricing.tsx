@@ -105,7 +105,7 @@ export default function Pricing() {
             <p className="text-gray-400">Select how many devices you want to use simultaneously</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-3 gap-2 mb-6">
             {[
               { 
                 devices: 1, 
@@ -136,25 +136,25 @@ export default function Pricing() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 onClick={() => setSelectedDevices(option.devices)}
-                className={`relative bg-gradient-to-br ${option.color} rounded-xl p-6 cursor-pointer transition-all duration-300 ${
+                className={`relative bg-gradient-to-br ${option.color} rounded-lg p-3 cursor-pointer transition-all duration-300 ${
                   selectedDevices === option.devices 
-                    ? 'ring-4 ring-red-500 ring-opacity-50 scale-105' 
+                    ? 'ring-2 ring-red-500 ring-opacity-50 scale-105' 
                     : 'hover:scale-105'
                 }`}
               >
                 <div className="text-center">
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center ${
+                  <div className={`w-10 h-10 mx-auto mb-2 rounded-full bg-white/20 flex items-center justify-center ${
                     selectedDevices === option.devices ? 'bg-white/30' : ''
                   }`}>
-                    <Icon icon={option.icon} className="w-8 h-8 text-white" />
+                    <Icon icon={option.icon} className="w-5 h-5 text-white" />
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2">{option.devices}</div>
-                  <div className="text-lg font-semibold text-white mb-2">{option.price}</div>
-                  <p className="text-white/80 text-sm">{option.description}</p>
+                  <div className="text-xl font-bold text-white mb-1">{option.devices}</div>
+                  <div className="text-xs font-semibold text-white mb-1">{option.price}</div>
+                  <p className="text-white/80 text-xs leading-tight">{option.description}</p>
                 </div>
                 {selectedDevices === option.devices && (
-                  <div className="absolute -top-2 -right-2 bg-green-500 rounded-full p-1">
-                    <Icon icon="mdi:check" className="w-4 h-4 text-white" />
+                  <div className="absolute -top-1 -right-1 bg-green-500 rounded-full p-1">
+                    <Icon icon="mdi:check" className="w-3 h-3 text-white" />
                   </div>
                 )}
               </motion.div>
