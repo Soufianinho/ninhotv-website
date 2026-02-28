@@ -28,12 +28,12 @@ export default function BottomNavigation() {
   };
 
   const handleFreeTrial = () => {
-    // Check if we're on the home page
-    if (typeof window !== 'undefined' && window.location.pathname === '/') {
-      scrollToSection('#pricing');
-    } else {
-      navigateToPage('/#pricing');
+    // Trigger Meta Pixel Lead event
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead');
     }
+    
+    navigateToPage('/free-trial');
   };
 
   const navItems = [
@@ -52,9 +52,9 @@ export default function BottomNavigation() {
       href: '#channels'
     },
     { 
-      id: 'pricing', 
-      name: 'Pricing', 
-      icon: 'mdi:currency-usd', 
+      id: 'free-trial', 
+      name: 'Free Trial', 
+      icon: 'mdi:play-circle', 
       action: 'custom',
       handler: handleFreeTrial
     },

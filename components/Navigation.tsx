@@ -42,12 +42,12 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
   };
 
   const handleFreeTrial = () => {
-    // Check if we're on the home page
-    if (typeof window !== 'undefined' && window.location.pathname === '/') {
-      scrollToSection('#pricing');
-    } else {
-      navigateToPage('/#pricing');
+    // Trigger Meta Pixel Lead event
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead');
     }
+    
+    navigateToPage('/free-trial');
   };
 
   return (
