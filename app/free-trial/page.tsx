@@ -5,13 +5,13 @@ import { Icon } from '@iconify/react';
 
 export default function FreeTrial() {
   const handleFreeTrial = () => {
-    // Trigger Meta Pixel Lead event
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
     }
-    
-    // Open WhatsApp with pre-filled message
-    window.open('https://wa.me/212639040826?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV. Please provide me with the trial access details.', '_blank');
+
+    setTimeout(() => {
+      window.open('https://wa.me/212639040826?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV. Please provide me with the trial access details.', '_blank');
+    }, 300);
   };
 
   return (

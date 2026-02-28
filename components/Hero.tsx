@@ -12,13 +12,13 @@ export default function Hero() {
   };
 
   const handleFreeTrial = () => {
-    // Trigger Meta Pixel Lead event
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
     }
-    
-    // Navigate to free trial page
-    window.location.href = '/free-trial';
+
+    setTimeout(() => {
+      window.location.href = '/free-trial';
+    }, 300);
   };
 
   return (

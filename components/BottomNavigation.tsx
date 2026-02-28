@@ -28,12 +28,13 @@ export default function BottomNavigation() {
   };
 
   const handleFreeTrial = () => {
-    // Trigger Meta Pixel Lead event
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
     }
-    
-    navigateToPage('/free-trial');
+
+    setTimeout(() => {
+      navigateToPage('/free-trial');
+    }, 300);
   };
 
   const navItems = [
