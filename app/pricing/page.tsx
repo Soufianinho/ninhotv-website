@@ -60,6 +60,18 @@ export default function PricingPage() {
     popular: plan.name === '12 Months'
   }));
 
+  const handleDeviceSelect = (devices: number) => {
+    setSelectedDevices(devices);
+    
+    // Scroll to pricing section after selection
+    setTimeout(() => {
+      const pricingSection = document.getElementById('pricing-cards');
+      if (pricingSection) {
+        pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   const handleSubscribe = (planName: string) => {
     const plan = plans.find(p => p.name === planName);
     const price = plan?.price;
@@ -67,7 +79,13 @@ export default function PricingPage() {
   };
 
   const handleFreeTrial = () => {
-    window.open(`https://wa.me/212639040826?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''}.`, '_blank');
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead');
+    }
+
+    setTimeout(() => {
+      window.open(`https://wa.me/212639040826?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''}.`, '_blank');
+    }, 300);
   };
 
   return (
@@ -84,15 +102,42 @@ export default function PricingPage() {
             Simple <span className="text-red-500">Pricing</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Choose the perfect plan for your entertainment needs. All plans include full access to our UK IPTV service.
+            Choose perfect plan for your entertainment needs. Start with a free trial and select your device package.
           </p>
         </motion.div>
 
-        {/* Device Selection - New Design */}
+        {/* Free Trial CTA - MOVED TO FIRST POSITION */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
+          className="bg-gradient-to-r from-green-600 to-green-500 rounded-2xl p-8 mb-12 max-w-4xl mx-auto"
+        >
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Icon icon="mdi:gift" className="w-8 h-8 text-white mr-3" />
+              <h3 className="text-2xl font-bold text-white">Try Before You Buy</h3>
+            </div>
+            <p className="text-green-100 mb-6">
+              Get a <span className="font-bold">FREE 24-HOUR TRIAL</span> with full access to all channels and features for {selectedDevices} device{selectedDevices > 1 ? 's' : ''}
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleFreeTrial}
+              className="bg-white text-green-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+            >
+              <Icon icon="mdi:play-circle" className="inline-block w-5 h-5 mr-2" />
+              Start Free Trial Now
+            </motion.button>
+          </div>
+        </motion.div>
+
+        {/* Device Selection - MOVED TO SECOND POSITION */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-gray-800 rounded-2xl p-8 mb-12 max-w-4xl mx-auto border border-gray-700"
         >
           <div className="text-center mb-6">
@@ -132,7 +177,7 @@ export default function PricingPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                onClick={() => setSelectedDevices(option.devices)}
+                onClick={() => handleDeviceSelect(option.devices)}
                 className={`relative bg-gradient-to-br ${option.color} rounded-xl p-6 cursor-pointer transition-all duration-300 ${
                   selectedDevices === option.devices 
                     ? 'ring-4 ring-red-500 ring-opacity-50 scale-105' 
@@ -168,35 +213,8 @@ export default function PricingPage() {
           </div>
         </motion.div>
 
-        {/* Free Trial CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-gradient-to-r from-green-600 to-green-500 rounded-2xl p-8 mb-12 max-w-4xl mx-auto"
-        >
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-4">
-              <Icon icon="mdi:gift" className="w-8 h-8 text-white mr-3" />
-              <h3 className="text-2xl font-bold text-white">Try Before You Buy</h3>
-            </div>
-            <p className="text-green-100 mb-6">
-              Get a <span className="font-bold">FREE 24-HOUR TRIAL</span> with full access to all channels and features for {selectedDevices} device{selectedDevices > 1 ? 's' : ''}
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={handleFreeTrial}
-              className="bg-white text-green-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
-            >
-              <Icon icon="mdi:play-circle" className="inline-block w-5 h-5 mr-2" />
-              Start Free Trial Now
-            </motion.button>
-          </div>
-        </motion.div>
-
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        {/* Pricing Cards - MOVED TO THIRD POSITION */}
+        <div id="pricing-cards" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
