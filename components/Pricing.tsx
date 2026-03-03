@@ -60,6 +60,18 @@ export default function Pricing() {
     popular: plan.name === '12 Months'
   }));
 
+  const handleDeviceSelect = (devices: number) => {
+    setSelectedDevices(devices);
+    
+    // Scroll to pricing section after selection
+    setTimeout(() => {
+      const pricingSection = document.getElementById('pricing-cards');
+      if (pricingSection) {
+        pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   const handleSubscribe = (planName: string) => {
     const plan = plans.find(p => p.name === planName);
     const price = plan?.price;
@@ -169,7 +181,7 @@ export default function Pricing() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                onClick={() => setSelectedDevices(option.devices)}
+                onClick={() => handleDeviceSelect(option.devices)}
                 className={`relative bg-gradient-to-br ${option.color} rounded-lg p-3 cursor-pointer transition-all duration-300 ${
                   selectedDevices === option.devices 
                     ? 'ring-2 ring-red-500 ring-opacity-50 scale-105' 
@@ -206,7 +218,7 @@ export default function Pricing() {
         </motion.div>
 
         {/* Pricing Cards - MOVED TO THIRD POSITION */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div id="pricing-cards" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
