@@ -1,9 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
+import Navigation from '@/components/Navigation';
 
 export default function FreeTrial() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleFreeTrial = () => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
@@ -16,6 +19,7 @@ export default function FreeTrial() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <motion.div
