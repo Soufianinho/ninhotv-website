@@ -31,13 +31,13 @@ export default function Footer() {
       title: 'contact us',
       links: [
         { name: 'support@ninhotv.net', href: 'mailto:support@ninhotv.net' },
-        { name: 'WhatsApp', href: 'https://wa.me/212639040826' }
+        { name: 'WhatsApp', href: 'https://wa.me/212669644802' }
       ]
     }
   ];
 
   const socialLinks = [
-    { icon: 'mdi:whatsapp', href: 'https://wa.me/212639040826', label: 'WhatsApp' },
+    { icon: 'mdi:whatsapp', href: 'https://wa.me/212669644802', label: 'WhatsApp' },
     { icon: 'mdi:telegram', href: 'https://t.me/ninhotv', label: 'Telegram' },
     { icon: 'mdi:email', href: 'mailto:support@ninhotv.net', label: 'Email' }
   ];

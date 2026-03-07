@@ -88,7 +88,7 @@ export default function RefundPolicy() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://wa.me/212639040826?text=Hi! I have a question about the refund policy.', '_blank')}
+                onClick={() => window.open('https://wa.me/212669644802?text=Hi! I have a question about refund policy.', '_blank')}
                 className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-red-500/25 flex items-center justify-center"
               >
                 <Icon icon="mdi:whatsapp" className="w-5 h-5 mr-2" />

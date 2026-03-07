@@ -126,7 +126,7 @@ export default function PaymentMethods() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.open('https://wa.me/212639040826?text=Hi! I want to subscribe to NinhoTV using ' + method.name + ' payment method.', '_blank')}
+                onClick={() => window.open('https://wa.me/212669644802?text=Hi! I want to subscribe to NinhoTV using ' + method.name + ' payment method.', '_blank')}
                 className={`w-full bg-gradient-to-r ${method.color} text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300`}
               >
                 <Icon icon="mdi:arrow-right" className="inline-block w-4 h-4 mr-2" />
@@ -183,7 +183,7 @@ export default function PaymentMethods() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => window.open('https://wa.me/212639040826?text=Hi! I need help choosing the best payment method for my NinhoTV subscription.', '_blank')}
+            onClick={() => window.open('https://wa.me/212669644802?text=Hi! I need help choosing best payment method for my NinhoTV subscription.', '_blank')}
             className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-2xl font-semibold hover:from-green-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <Icon icon="mdi:headset" className="inline-block w-6 h-6 mr-2" />

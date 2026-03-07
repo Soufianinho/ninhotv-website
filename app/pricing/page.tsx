@@ -75,7 +75,7 @@ export default function PricingPage() {
   const handleSubscribe = (planName: string) => {
     const plan = plans.find(p => p.name === planName);
     const price = plan?.price;
-    window.open(`https://wa.me/212639040826?text=Hi! I want to subscribe to the ${planName} plan for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''} at ${price}.`, '_blank');
+    window.open(`https://wa.me/212669644802?text=Hi! I want to subscribe to the ${planName} plan for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''} at ${price}.`, '_blank');
   };
 
   const handleFreeTrial = () => {
@@ -84,7 +84,7 @@ export default function PricingPage() {
     }
 
     setTimeout(() => {
-      window.open(`https://wa.me/212639040826?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''}.`, '_blank');
+      window.open(`https://wa.me/212669644802?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''}.`, '_blank');
     }, 300);
   };
 

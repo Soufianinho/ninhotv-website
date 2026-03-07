@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 
 export default function ChatWidget() {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/212639040826?text=Hi! I am interested in NinhoTV IPTV service.', '_blank');
+    window.open('https://wa.me/212669644802?text=Hi! I am interested in NinhoTV IPTV service.', '_blank');
   };
 
   const handleTelegramClick = () => {
