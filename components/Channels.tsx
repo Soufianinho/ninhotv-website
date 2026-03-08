@@ -196,7 +196,7 @@ export default function Channels() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://wa.me/212669644802?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV.', '_blank')}
+                onClick={() => window.open('https://wa.me/212644870099?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV.', '_blank')}
                 className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 <Icon icon="mdi:play-circle" className="inline-block w-5 h-5 mr-2" />

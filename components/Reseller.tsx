@@ -86,7 +86,7 @@ export default function Reseller() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://wa.me/212669644802?text=Hi! I want to become a NinhoTV IPTV RESELLER.', '_blank')}
+                onClick={() => window.open('https://wa.me/212644870099?text=Hi! I want to become a NinhoTV IPTV RESELLER.', '_blank')}
                 className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-red-500/25"
               >
                 <Icon icon="mdi:whatsapp" className="inline-block w-6 h-6 mr-2" />
@@ -200,7 +200,7 @@ export default function Reseller() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => window.open(`https://wa.me/212639040826?text=Hi! I want to order the ${plan.name} plan for ${plan.price}.`, '_blank')}
+                  onClick={() => window.open(`https://wa.me/212644870099?text=Hi! I want to order the ${plan.name} plan for ${plan.price}.`, '_blank')}
                   className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
                     plan.popular
                       ? 'bg-red-500 hover:bg-red-600 text-white shadow-lg hover:shadow-red-500/25'
@@ -300,7 +300,7 @@ export default function Reseller() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://wa.me/212669644802?text=Hi! I want to become a NinhoTV IPTV RESELLER.', '_blank')}
+                onClick={() => window.open('https://wa.me/212644870099?text=Hi! I want to become a NinhoTV IPTV RESELLER.', '_blank')}
                 className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 <Icon icon="mdi:whatsapp" className="inline-block w-5 h-5 mr-2" />

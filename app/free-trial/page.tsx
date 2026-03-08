@@ -13,7 +13,7 @@ export default function FreeTrial() {
     }
 
     setTimeout(() => {
-      window.open('https://wa.me/212669644802?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV. Please provide me with the trial access details.', '_blank');
+      window.open('https://wa.me/212644870099?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV. Please provide me with the trial access details.', '_blank');
     }, 300);
   };
 
