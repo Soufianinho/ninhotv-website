@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface NavigationProps {
   isMenuOpen: boolean;
@@ -11,6 +12,19 @@ interface NavigationProps {
 
 export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const languages = [
+    { code: 'en', name: 'English', flag: '🇬🇧' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' }
+  ];
+
+  const handleLanguageChange = (langCode: string) => {
+    setLanguage(langCode as any);
+  };
 
   // Handle scroll effect
   if (typeof window !== 'undefined') {
@@ -73,12 +87,12 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {[
-              { name: 'Home', href: '#home', action: 'custom', handler: handleHomeClick },
-              { name: 'Channels', href: '#channels', action: 'scroll' },
-              { name: 'IPTV reseller', href: '/reseller', action: 'navigate' },
-              { name: 'Features', href: '#features', action: 'scroll' },
-              { name: 'Pricing', href: '/pricing', action: 'navigate' },
-              { name: 'FAQ', href: '#faq', action: 'scroll' }
+              { name: t('nav.home'), href: '#home', action: 'custom', handler: handleHomeClick },
+              { name: t('nav.channels'), href: '#channels', action: 'scroll' },
+              { name: t('nav.iptv_reseller'), href: '/reseller', action: 'navigate' },
+              { name: t('nav.features'), href: '#features', action: 'scroll' },
+              { name: t('nav.pricing'), href: '/pricing', action: 'navigate' },
+              { name: t('nav.faq'), href: '#faq', action: 'scroll' }
             ].map((item, index) => (
               <motion.button
                 key={item.name}
@@ -102,7 +116,56 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
           </div>
 
           {/* CTA Button - Desktop Only */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Language Switcher */}
+            <div className="relative group">
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4 }}
+                className="flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm border border-gray-600/30 hover:border-red-500/50 hover:from-red-500/10 hover:to-red-600/10 transition-all duration-300 shadow-lg hover:shadow-red-500/20"
+              >
+                <span className="text-xl filter drop-shadow-sm">
+                  {languages.find(lang => lang.code === language)?.flag}
+                </span>
+                <Icon icon="mdi:chevron-down" className="w-4 h-4 text-gray-300 group-hover:text-red-400 transition-all duration-300" />
+              </motion.button>
+              
+              {/* Dropdown Menu */}
+              <div className="absolute right-0 mt-3 w-56 bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-gray-600/50 rounded-2xl shadow-2xl shadow-red-500/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                <div className="p-2">
+                  {languages.map((lang) => (
+                    <motion.button
+                      key={lang.code}
+                      whileHover={{ x: 8, scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={`w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-left transition-all duration-200 ${
+                        language === lang.code 
+                          ? 'bg-gradient-to-r from-red-500/20 to-red-600/20 text-red-400 border border-red-500/30 shadow-lg shadow-red-500/20' 
+                          : 'text-gray-300 hover:bg-gray-700/50 hover:text-white hover:border-gray-600/50'
+                      }`}
+                    >
+                      <span className="text-2xl filter drop-shadow-sm">{lang.flag}</span>
+                      <div className="flex-1">
+                        <span className="text-sm font-medium block">{lang.name}</span>
+                        <span className="text-xs text-gray-400 capitalize">{lang.code}</span>
+                      </div>
+                      {language === lang.code && (
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          className="flex-shrink-0"
+                        >
+                          <Icon icon="mdi:check-circle" className="w-5 h-5 text-red-400" />
+                        </motion.div>
+                      )}
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -110,7 +173,7 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
               onClick={handleFreeTrial}
               className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 shadow-lg hover:shadow-red-500/25"
             >
-              Start Free Trial
+              {t('nav.start_free_trial')}
             </motion.button>
           </div>
 

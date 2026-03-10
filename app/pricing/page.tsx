@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const basePlans = [
   {
@@ -44,6 +45,7 @@ const devicePricing = {
 export default function PricingPage() {
   const [selectedDevices, setSelectedDevices] = useState(1);
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
+  const { t } = useLanguage();
 
   // Calculate plans based on selected devices
   const plans = basePlans.map(plan => ({
@@ -52,9 +54,9 @@ export default function PricingPage() {
     features: [
       '33,000+ Live Channels',
       '150,000+ Movies & VOD',
-      'HD & 4K Quality',
-      `${selectedDevices} Connection${selectedDevices > 1 ? 's' : ''}`,
-      '24/7 Support',
+      t('features.hd_quality'),
+      `${selectedDevices} ${t('pricing.devices')}${selectedDevices > 1 ? 's' : ''}`,
+      t('features.support'),
       'EPG Guide'
     ],
     popular: plan.name === '12 Months'
@@ -143,9 +145,9 @@ export default function PricingPage() {
           <div className="text-center mb-6">
             <h2 className="text-2xl font-bold text-white mb-2 flex items-center justify-center">
               <Icon icon="mdi:devices" className="w-7 h-7 text-red-500 mr-3" />
-              Choose Your Device Package
+              {t('pricing.choose_device_package')}
             </h2>
-            <p className="text-gray-400">Select how many devices you want to use simultaneously</p>
+            <p className="text-gray-400">{t('pricing.device_desc')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
@@ -272,7 +274,7 @@ export default function PricingPage() {
                   }`}
                 >
                   {plan.popular && <Icon icon="mdi:crown" className="inline-block w-4 h-4 mr-2" />}
-                  Get Started
+                  {t('pricing.get_started')}
                 </motion.button>
               </div>
             </motion.div>
@@ -321,7 +323,7 @@ export default function PricingPage() {
             className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
           >
             <Icon icon="mdi:home" className="inline-block w-5 h-5 mr-2" />
-            Back to Home
+            {t('pricing.back_to_home')}
           </motion.button>
         </motion.div>
       </div>

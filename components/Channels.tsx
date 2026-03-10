@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const channelCategories = [
   {
@@ -51,6 +52,7 @@ const channelCategories = [
 
 export default function Channels() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   return (
     <section id="channels" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
@@ -64,7 +66,7 @@ export default function Channels() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="text-red-500">Channel</span> Lineup
+            {t('nav.channels')} <span className="text-red-500">Lineup</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Access over <span className="text-red-500 font-semibold">33,000+ Live TV Channels</span> including all 
@@ -190,7 +192,7 @@ export default function Channels() {
             </h2>
             <p className="text-white/90 mb-6">
               Start your free trial and enjoy instant access to our complete UK IPTV channel lineup
-              <span className="block text-sm mt-2">🇬🇧 Trusted by thousands of UK customers ✓ No buffering ✓ HD quality ✓ 24/7 Support</span>
+              <span className="block text-sm mt-2">{t('hero.trusted_by')} ✓ No buffering ✓ HD quality ✓ 24/7 Support</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
@@ -200,7 +202,7 @@ export default function Channels() {
                 className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 <Icon icon="mdi:play-circle" className="inline-block w-5 h-5 mr-2" />
-                Start Free Trial UK
+              {t('nav.start_free_trial')} UK
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}

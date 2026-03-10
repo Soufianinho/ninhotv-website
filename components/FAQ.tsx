@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from '@iconify/react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const faqs = [
   {
@@ -50,6 +51,30 @@ const faqs = [
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const { t } = useLanguage();
+
+  const faqs = [
+    {
+      question: t('faq.question1'),
+      answer: t('faq.answer1'),
+      category: 'general'
+    },
+    {
+      question: t('faq.question2'),
+      answer: t('faq.answer2'),
+      category: 'trial'
+    },
+    {
+      question: t('faq.question3'),
+      answer: t('faq.answer3'),
+      category: 'trial'
+    },
+    {
+      question: t('faq.question4'),
+      answer: t('faq.answer4'),
+      category: 'general'
+    }
+  ];
 
   const categories = [
     { id: 'all', name: 'All Questions', icon: 'mdi:help-circle' },
@@ -82,10 +107,10 @@ export default function FAQ() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Frequently Asked <span className="text-red-500">Questions</span>
+            {t('faq.title').split(' ')[0]} <span className="text-red-500">{t('faq.title').split(' ')[1] || 'Questions'}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Everything you need to know about NinhoTV IPTV service
+            {t('faq.subtitle')}
           </p>
         </motion.div>
 
@@ -176,10 +201,10 @@ export default function FAQ() {
         >
           <div className="bg-gradient-to-r from-red-600 to-red-500 rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Still Have Questions?
+              {t('faq.still_have_questions')}
             </h3>
             <p className="text-white/90 mb-6">
-              Our UK support team is available 24/7 to help you with any questions or issues
+              {t('faq.contact_support')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
@@ -189,7 +214,7 @@ export default function FAQ() {
                 className="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 <Icon icon="mdi:whatsapp" className="inline-block w-5 h-5 mr-2" />
-                Chat on WhatsApp
+                {t('faq.chat_whatsapp')}
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -198,7 +223,7 @@ export default function FAQ() {
                 className="bg-red-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-800 transition-colors"
               >
                 <Icon icon="mdi:email" className="inline-block w-5 h-5 mr-2" />
-                Email Support
+                {t('faq.email_us')} Support
               </motion.button>
             </div>
           </div>

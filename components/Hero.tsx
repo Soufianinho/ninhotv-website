@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
     if (element) {
@@ -77,9 +80,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
             >
-              The Best
-              <span className="block text-red-500">IPTV UK</span>
-              Experience
+              {t('hero.title')}
+              <span className="block text-red-500">{t('hero.subtitle')}</span>
             </motion.h1>
 
             <motion.p
@@ -88,10 +90,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              Get instant access to <span className="text-red-500 font-semibold">33,000+ Live TV Channels</span> and 
-              <span className="text-red-500 font-semibold">150,000+ Movies & VODs</span>. 
-              Premium UK IPTV service with fast servers, 24/7 support, and all your favorite British channels.
-              <span className="block text-green-400 font-medium mt-2">✓ Fast UK Servers ✓ HD Quality ✓ 24/7 Support ✓ All UK Channels</span>
+              {t('hero.description')}
+              <span className="block text-green-400 font-medium mt-2">✓ {t('features.hd_quality')} ✓ {t('features.uk_servers')} ✓ {t('features.support')} ✓ {t('features.compatible')}</span>
             </motion.p>
 
             <motion.div
@@ -107,7 +107,7 @@ export default function Hero() {
                 className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-red-500/25"
               >
                 <Icon icon="mdi:play-circle" className="inline-block w-5 h-5 mr-2" />
-                Start Free Trial
+                {t('hero.start_trial')}
               </motion.button>
               
               <motion.button
@@ -117,7 +117,7 @@ export default function Hero() {
                 className="border-2 border-gray-600 hover:border-red-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200"
               >
                 <Icon icon="mdi:television" className="inline-block w-5 h-5 mr-2" />
-                View Channels
+                {t('common.view_pricing')}
               </motion.button>
             </motion.div>
 

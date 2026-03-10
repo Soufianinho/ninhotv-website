@@ -2,33 +2,42 @@
 
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const footerLinks = [
     {
-      title: 'Pages',
+      title: t('footer.pages'),
       links: [
-        { name: 'Channels', href: '#channels' },
-        { name: 'Features', href: '#features' },
-        { name: 'Pricing', href: '#pricing' },
-        { name: 'Free Trial', href: '#pricing' }
+        { name: t('nav.channels'), href: '#channels' },
+        { name: t('nav.features'), href: '#features' },
+        { name: t('nav.pricing'), href: '#pricing' },
+        { name: t('nav.start_free_trial'), href: '#pricing' }
       ]
     },
-    
     {
-      title: 'Legal',
+      title: t('footer.support'),
+      links: [
+        { name: 'FAQ', href: '#faq' },
+        { name: t('nav.contact'), href: 'https://wa.me/212644870099' },
+        { name: 'Help Center', href: '/help' },
+        { name: 'support@ninhotv.net', href: 'mailto:support@ninhotv.net' }
+      ]
+    },
+    {
+      title: t('footer.legal'),
       links: [
         { name: 'Terms of Service', href: '/terms' },
         { name: 'Privacy Policy', href: '/privacy' },
         { name: 'Refund Policy', href: '/refund' },
-        { name: 'Help Center', href: '/help' },
         { name: 'DMCA', href: '/dmca' }
       ]
     },
     {
-      title: 'contact us',
+      title: t('footer.contact_us'),
       links: [
         { name: 'support@ninhotv.net', href: 'mailto:support@ninhotv.net' },
         { name: 'WhatsApp', href: 'https://wa.me/212644870099' }
@@ -77,7 +86,7 @@ export default function Footer() {
               <span className="text-xl font-bold text-white">Ninho<span className="text-red-500">TV</span></span>
             </div>
             <p className="text-gray-400 mb-6">
-              Premium IPTV service with 33,000+ live channels and 150,000+ movies. Fast UK servers, 24/7 support.
+              {t('footer.description')}
             </p>
             
             {/* Social Links */}
@@ -134,21 +143,21 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © {currentYear} NinhoTV. All rights reserved.
+              © {currentYear} NinhoTV. {t('footer.all_rights_reserved')}
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
               <div className="flex items-center space-x-2 text-gray-400">
                 <Icon icon="mdi:shield-check" className="w-4 h-4 text-green-500" />
-                <span>Secure Payment</span>
+                <span>{t('footer.secure_payment')}</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-400">
                 <Icon icon="mdi:server" className="w-4 h-4 text-blue-500" />
-                <span>UK Servers</span>
+                <span>{t('footer.uk_servers')}</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-400">
                 <Icon icon="mdi:headset" className="w-4 h-4 text-purple-500" />
-                <span>24/7 Support</span>
+                <span>{t('footer.support_24_7')}</span>
               </div>
             </div>
           </div>
