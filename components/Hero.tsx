@@ -94,27 +94,223 @@ export default function Hero() {
               <span className="block text-green-400 font-medium mt-2">✓ {t('features.hd_quality')} ✓ {t('features.uk_servers')} ✓ {t('features.support')} ✓ {t('features.compatible')}</span>
             </motion.p>
 
+            {/* Mobile-Specific Free Trial Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="lg:hidden mb-8"
+            >
+              <div className="relative mx-auto max-w-sm">
+                {/* Pulsing Ring Effect */}
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.3, 1],
+                    opacity: [0.3, 0.1, 0.3]
+                  }}
+                  transition={{ 
+                    duration: 2.5, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute inset-0 bg-gradient-to-r from-red-500/30 to-red-600/30 rounded-full"
+                />
+                
+                <motion.button
+                  whileHover={{ scale: 1.08, y: -3 }}
+                  whileTap={{ scale: 0.92 }}
+                  onClick={handleFreeTrial}
+                  className="relative w-full bg-gradient-to-br from-red-600 via-red-500 to-red-700 text-white px-6 py-4 rounded-2xl font-bold text-lg shadow-2xl border-2 border-red-400/50 hover:border-red-300/70 transition-all duration-400 overflow-hidden group"
+                >
+                  {/* Animated Background Pattern */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Grid Pattern Overlay */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="w-full h-full" style={{
+                      backgroundImage: `linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%)`,
+                      backgroundSize: '20px 20px',
+                      animation: 'slide 2s linear infinite'
+                    }}></div>
+                  </div>
+                  
+                  <div className="relative flex items-center justify-center space-x-3">
+                    <motion.div
+                      animate={{ 
+                        rotate: [0, -10, 10, 0],
+                        scale: [1, 1.1, 1]
+                      }}
+                      transition={{ 
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <Icon icon="mdi:play-circle" className="w-7 h-7 text-white drop-shadow-2xl" />
+                    </motion.div>
+                    <span className="tracking-wide font-bold">{t('hero.start_trial')}</span>
+                    
+                    {/* Mobile Badge */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.5 }}
+                      className="bg-yellow-400 text-red-900 text-xs px-2 py-1 rounded-full font-bold"
+                    >
+                      FREE
+                    </motion.div>
+                  </div>
+                  
+                  {/* Side Glow Effects */}
+                  <motion.div
+                    animate={{ 
+                      x: [-20, 20, -20],
+                      opacity: [0, 0.6, 0]
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="absolute top-1/2 left-0 w-3 h-3 bg-yellow-400/40 rounded-full blur-md"
+                  />
+                  <motion.div
+                    animate={{ 
+                      x: [20, -20, 20],
+                      opacity: [0, 0.6, 0]
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                    className="absolute top-1/2 right-0 w-3 h-3 bg-blue-400/40 rounded-full blur-md"
+                  />
+                </motion.button>
+                
+                {/* Floating Elements */}
+                <motion.div
+                  animate={{ 
+                    y: [-5, -15, -5],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute -top-8 left-1/2 w-2 h-2"
+                >
+                  <div className="w-full h-full bg-gradient-to-r from-yellow-300 to-orange-400 rounded-full shadow-lg"></div>
+                </motion.div>
+                <motion.div
+                  animate={{ 
+                    y: [-10, -5, -10],
+                    rotate: [360, 180, 0],
+                    scale: [1, 0.8, 1]
+                  }}
+                  transition={{ 
+                    duration: 3.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.7
+                  }}
+                  className="absolute -top-6 right-1/2 w-1.5 h-1.5"
+                >
+                  <div className="w-full h-full bg-gradient-to-r from-blue-300 to-purple-400 rounded-full shadow-lg"></div>
+                </motion.div>
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
             >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleFreeTrial}
-                className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-red-500/25"
+              {/* Premium Free Trial Button - Desktop */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6 }}
+                whileHover={{ y: -5 }}
+                className="relative hidden lg:block"
               >
-                <Icon icon="mdi:play-circle" className="inline-block w-5 h-5 mr-2" />
-                {t('hero.start_trial')}
-              </motion.button>
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-red-600/20 rounded-full blur-xl scale-110"></div>
+                
+                <motion.button
+                  whileHover={{ scale: 1.05, rotate: [0, 1, -1, 0] }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleFreeTrial}
+                  className="relative bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:from-red-600 hover:via-red-700 hover:to-red-800 text-white px-10 py-4.5 rounded-full text-lg font-bold transition-all duration-300 shadow-2xl hover:shadow-red-500/40 border border-red-400/30 hover:border-red-300/50 group"
+                >
+                  {/* Inner Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full"></div>
+                  
+                  {/* Shimmer Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  <div className="relative flex items-center">
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                      className="mr-3"
+                    >
+                      <Icon icon="mdi:play-circle" className="w-6 h-6 text-white drop-shadow-lg" />
+                    </motion.div>
+                    <span className="tracking-wide">{t('hero.start_trial')}</span>
+                    
+                    {/* Sparkle Icons */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: [0, 1, 0], scale: [0, 1.2, 0] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                      className="absolute -top-1 -right-1"
+                    >
+                      <Icon icon="mdi:star-four-points" className="w-3 h-3 text-yellow-300" />
+                    </motion.div>
+                  </div>
+                </motion.button>
+                
+                {/* Floating Particles */}
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute -top-2 -left-2 w-2 h-2"
+                >
+                  <div className="w-full h-full bg-yellow-400/60 rounded-full blur-sm"></div>
+                </motion.div>
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [360, 180, 0]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5
+                  }}
+                  className="absolute -top-3 -right-3 w-1.5 h-1.5"
+                >
+                  <div className="w-full h-full bg-blue-400/60 rounded-full blur-sm"></div>
+                </motion.div>
+              </motion.div>
               
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('#channels')}
-                className="border-2 border-gray-600 hover:border-red-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200"
+                onClick={() => window.location.href = '/pricing'}
+                className="border-2 border-gray-600/50 hover:border-red-500/70 bg-gray-800/50 hover:bg-gray-700/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-sm"
               >
                 <Icon icon="mdi:television" className="inline-block w-5 h-5 mr-2" />
                 {t('common.view_pricing')}
