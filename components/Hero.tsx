@@ -327,7 +327,7 @@ export default function Hero() {
               {[
                 { icon: "mdi:television", label: "33,000+ Channels", value: "Live TV" },
                 { icon: "mdi:movie", label: "150,000+ Titles", value: "Movies & Shows" },
-                { icon: "mdi:earth", label: "UK & Global", value: "Worldwide Access" },
+                { icon: "mdi:earth", label: "Europe & Global", value: "Worldwide Access" },
                 { icon: "mdi:devices", label: "All Devices", value: "Multi-Platform" }
               ].map((feature, index) => (
                 <motion.div
@@ -367,7 +367,7 @@ export default function Hero() {
               >
                 <img
                   src="https://wiztv.co.uk/wp-content/uploads/2025/10/iptv-uk-2.png"
-                  alt="NinhoTV IPTV UK Service"
+                  alt="NinhoTV IPTV Europe Service"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
               </motion.div>

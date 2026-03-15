@@ -8,28 +8,28 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const basePlans = [
   {
     name: '1 Month',
-    basePrice: 9.99,
+    basePrice: 11.99,
     originalPrice: 19.99,
     period: '/month',
     color: 'from-gray-600 to-gray-700'
   },
   {
     name: '3 Months',
-    basePrice: 19.99,
+    basePrice: 24.99,
     originalPrice: 39.97,
     period: '/3 months',
     color: 'from-blue-600 to-blue-700'
   },
   {
     name: '6 Months',
-    basePrice: 24.99,
+    basePrice: 29.99,
     originalPrice: 49.94,
     period: '/6 months',
     color: 'from-red-500 to-red-600'
   },
   {
     name: '12 Months',
-    basePrice: 39.99,
+    basePrice: 49.99,
     originalPrice: 79.99,
     period: '/year',
     color: 'from-purple-600 to-purple-700'
@@ -50,7 +50,7 @@ export default function Pricing() {
   // Calculate plans based on selected devices
   const plans = basePlans.map(plan => ({
     ...plan,
-    price: `£${(plan.basePrice * devicePricing[selectedDevices as keyof typeof devicePricing]).toFixed(2)}`,
+    price: `€${(plan.basePrice * devicePricing[selectedDevices as keyof typeof devicePricing]).toFixed(2)}`,
     features: [
       '33,000+ Live Channels',
       '150,000+ Movies & VOD',
@@ -86,7 +86,7 @@ export default function Pricing() {
     }
 
     setTimeout(() => {
-      window.open(`https://wa.me/212644870099?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''}.`, '_blank');
+      window.open(`https://wa.me/212644870099?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV Europe IPTV for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''}.`, '_blank');
     }, 300);
   };
 

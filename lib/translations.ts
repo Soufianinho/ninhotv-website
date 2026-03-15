@@ -12,12 +12,12 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: 'Best IPTV Service in UK',
+      title: 'Best IPTV Service in Europe',
       subtitle: '33,000+ Live Channels & 150,000+ Movies',
-      description: 'Experience premium entertainment with NinhoTV. Fast UK servers, HD quality, 24/7 support.',
+      description: 'Experience premium entertainment with NinhoTV. Fast European servers, HD quality, 24/7 support.',
       get_started: 'Get Started',
       start_trial: 'Start Free Trial',
-      trusted_by: 'Trusted by 50,000+ UK customers'
+      trusted_by: 'Trusted by 50,000+ European customers'
     },
     // Pricing
     pricing: {
@@ -47,8 +47,8 @@ export const translations = {
       subtitle: 'The best IPTV experience with premium features',
       hd_quality: 'HD & 4K Quality',
       hd_desc: 'Crystal clear picture quality with HD and 4K streaming',
-      uk_servers: 'Fast UK Servers',
-      uk_desc: 'Lightning-fast streaming from UK-based servers',
+      uk_servers: 'Fast European Servers',
+      uk_desc: 'Lightning-fast streaming from European-based servers',
       support: '24/7 Support',
       support_desc: 'Round-the-clock customer support',
       compatible: 'All Devices',
@@ -65,22 +65,22 @@ export const translations = {
       question3: 'Is there a free trial?',
       answer3: 'Yes! We offer a 24-hour free trial with full access to all channels and features.',
       question4: 'What channels are included?',
-      answer4: 'We offer 33,000+ live channels including UK, US, European, sports, movies, and international channels.',
+      answer4: 'We offer 33,000+ live channels including European, US, sports, movies, and international channels.',
       still_have_questions: 'Still Have Questions?',
-      contact_support: 'Our UK support team is available 24/7 to help you',
+      contact_support: 'Our European support team is available 24/7 to help you',
       chat_whatsapp: 'Chat on WhatsApp',
       email_us: 'Email Us'
     },
     // Footer
     footer: {
-      description: 'Premium IPTV service with 33,000+ live channels and 150,000+ movies. Fast UK servers, 24/7 support.',
+      description: 'Premium IPTV service with 33,000+ live channels and 150,000+ movies. Fast European servers, 24/7 support.',
       pages: 'Pages',
       support: 'Support',
       legal: 'Legal',
       contact_us: 'contact us',
       all_rights_reserved: 'All rights reserved.',
       secure_payment: 'Secure Payment',
-      uk_servers: 'UK Servers',
+      uk_servers: 'European Servers',
       support_24_7: '24/7 Support'
     },
     // Common
@@ -107,12 +107,12 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: 'Meilleur Service IPTV au Royaume-Uni',
+      title: 'Meilleur Service IPTV en Europe',
       subtitle: '33,000+ Chaînes en Direct & 150,000+ Films',
-      description: 'Découvrez un divertissement premium avec NinhoTV. Serveurs rapides au Royaume-Uni, qualité HD, support 24/7.',
+      description: 'Découvrez un divertissement premium avec NinhoTV. Serveurs rapides en Europe, qualité HD, support 24/7.',
       get_started: 'Commencer',
       start_trial: 'Essai Gratuit',
-      trusted_by: 'Approuvé par 50,000+ clients au Royaume-Uni'
+      trusted_by: 'Approuvé par 50,000+ clients en Europe'
     },
     // Pricing
     pricing: {
@@ -142,8 +142,8 @@ export const translations = {
       subtitle: 'La meilleure expérience IPTV avec fonctionnalités premium',
       hd_quality: 'Qualité HD & 4K',
       hd_desc: 'Qualité d\'image cristalline avec streaming HD et 4K',
-      uk_servers: 'Serveurs Rapides au Royaume-Uni',
-      uk_desc: 'Streaming ultra-rapide depuis des serveurs basés au Royaume-Uni',
+      uk_servers: 'Serveurs Rapides en Europe',
+      uk_desc: 'Streaming ultra-rapide depuis des serveurs basés en Europe',
       support: 'Support 24/7',
       support_desc: 'Support client disponible 24h/24 et 7j/7',
       compatible: 'Tous les Appareils',
@@ -160,22 +160,22 @@ export const translations = {
       question3: 'Y a-t-il un essai gratuit?',
       answer3: 'Oui! Nous offrons un essai gratuit de 24 heures avec accès complet à toutes les chaînes et fonctionnalités.',
       question4: 'Quelles chaînes sont incluses?',
-      answer4: 'Nous offrons 33,000+ chaînes en direct incluant Royaume-Uni, US, Europe, sports, films et chaînes internationales.',
+      answer4: 'Nous offrons 33,000+ chaînes en direct incluant Europe, US, sports, films et chaînes internationales.',
       still_have_questions: 'Avez-vous Encore des Questions?',
-      contact_support: 'Notre support au Royaume-Uni est disponible 24/7 pour vous aider',
+      contact_support: 'Notre support en Europe est disponible 24/7 pour vous aider',
       chat_whatsapp: 'Discuter sur WhatsApp',
       email_us: 'Nous Envoyer un Email'
     },
     // Footer
     footer: {
-      description: 'Service IPTV premium avec 33,000+ chaînes en direct et 150,000+ films. Serveurs rapides au Royaume-Uni, support 24/7.',
+      description: 'Service IPTV premium avec 33,000+ chaînes en direct et 150,000+ films. Serveurs rapides en Europe, support 24/7.',
       pages: 'Pages',
       support: 'Support',
       legal: 'Légal',
       contact_us: 'Nous Contacter',
       all_rights_reserved: 'Tous droits réservés.',
       secure_payment: 'Paiement Sécurisé',
-      uk_servers: 'Serveurs Royaume-Uni',
+      uk_servers: 'Serveurs Europe',
       support_24_7: 'Support 24/7'
     },
     // Common
@@ -237,8 +237,8 @@ export const translations = {
       subtitle: 'أفضل تجربة IPTV مع ميزات مميزة',
       hd_quality: 'جودة HD و 4K',
       hd_desc: 'جودة صورة واضحة مع البث HD و 4K',
-      uk_servers: 'خوادم سريعة في المملكة المتحدة',
-      uk_desc: 'بث فائق السرعة من خوادم مقرها المملكة المتحدة',
+      uk_servers: 'خوادم سريعة في أوروبا',
+      uk_desc: 'بث فائق السرعة من خوادم مقرها أوروبا',
       support: 'دعم 24/7',
       support_desc: 'دعم العملاء على مدار الساعة طوال أيام الأسبوع',
       compatible: 'جميع الأجهزة',
@@ -270,7 +270,7 @@ export const translations = {
       contact_us: 'اتصل بنا',
       all_rights_reserved: 'جميع الحقوق محفوظة.',
       secure_payment: 'دفع آمن',
-      uk_servers: 'خوادم المملكة المتحدة',
+      uk_servers: 'خوادم أوروبا',
       support_24_7: 'دعم 24/7'
     },
     // Common
@@ -297,12 +297,12 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: 'Bester IPTV-Dienst in UK',
+      title: 'Bester IPTV-Dienst in Europe',
       subtitle: '33,000+ Live-Kanäle & 150,000+ Filme',
-      description: 'Erleben Sie Premium-Unterhaltung mit NinhoTV. Schnelle UK-Server, HD-Qualität, 24/7-Support.',
+      description: 'Erleben Sie Premium-Unterhaltung mit NinhoTV. Schnelle Europe-Server, HD-Qualität, 24/7-Support.',
       get_started: 'Loslegen',
       start_trial: 'Kostenlose Testversion',
-      trusted_by: 'Vertraut von 50,000+ UK-Kunden'
+      trusted_by: 'Vertraut von 50,000+ Europe-Kunden'
     },
     // Pricing
     pricing: {
@@ -332,8 +332,8 @@ export const translations = {
       subtitle: 'Die beste IPTV-Erfahrung mit Premium-Funktionen',
       hd_quality: 'HD & 4K Qualität',
       hd_desc: 'Kristallklare Bildqualität mit HD- und 4K-Streaming',
-      uk_servers: 'Schnelle UK-Server',
-      uk_desc: 'Blitzschnelles Streaming von UK-basierten Servern',
+      uk_servers: 'Schnelle Europe-Server',
+      uk_desc: 'Blitzschnelles Streaming von Europe-basierten Servern',
       support: '24/7-Support',
       support_desc: 'Kundensupport rund um die Uhr',
       compatible: 'Alle Geräte',
@@ -350,22 +350,22 @@ export const translations = {
       question3: 'Gibt es eine kostenlose Testversion?',
       answer3: 'Ja! Wir bieten eine 24-stündige kostenlose Testversion mit vollem Zugriff auf alle Kanäle und Funktionen.',
       question4: 'Welche Kanäle sind enthalten?',
-      answer4: 'Wir bieten 33,000+ Live-Kanäle einschließlich UK, US, europäische, Sport, Filme und internationale Kanäle.',
+      answer4: 'Wir bieten 33,000+ Live-Kanäle einschließlich Europe, US, europäische, Sport, Filme und internationale Kanäle.',
       still_have_questions: 'Haben Sie noch Fragen?',
-      contact_support: 'Unser UK-Support-Team ist 24/7 verfügbar, um Ihnen zu helfen',
+      contact_support: 'Unser Europe-Support-Team ist 24/7 verfügbar, um Ihnen zu helfen',
       chat_whatsapp: 'WhatsApp-Chat',
       email_us: 'E-Mail senden'
     },
     // Footer
     footer: {
-      description: 'Premium IPTV-Dienst mit 33,000+ Live-Kanälen und 150,000+ Filmen. Schnelle UK-Server, 24/7-Support.',
+      description: 'Premium IPTV-Dienst mit 33,000+ Live-Kanälen und 150,000+ Filmen. Schnelle Europe-Server, 24/7-Support.',
       pages: 'Seiten',
       support: 'Support',
       legal: 'Rechtliches',
       contact_us: 'Kontaktieren Sie uns',
       all_rights_reserved: 'Alle Rechte vorbehalten.',
       secure_payment: 'Sichere Zahlung',
-      uk_servers: 'UK-Server',
+      uk_servers: 'Europe-Server',
       support_24_7: '24/7-Support'
     },
     // Common
@@ -392,12 +392,12 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: 'Mejor Servicio IPTV en UK',
+      title: 'Mejor Servicio IPTV en Europe',
       subtitle: '33,000+ Canales en Vivo & 150,000+ Películas',
-      description: 'Experimenta entretenimiento premium con NinhoTV. Servidores rápidos en UK, calidad HD, soporte 24/7.',
+      description: 'Experimenta entretenimiento premium con NinhoTV. Servidores rápidos en Europe, calidad HD, soporte 24/7.',
       get_started: 'Comenzar',
       start_trial: 'Prueba Gratuita',
-      trusted_by: 'Confiado por 50,000+ clientes en UK'
+      trusted_by: 'Confiado por 50,000+ clientes en Europe'
     },
     // Pricing
     pricing: {
@@ -427,8 +427,8 @@ export const translations = {
       subtitle: 'La mejor experiencia IPTV con características premium',
       hd_quality: 'Calidad HD & 4K',
       hd_desc: 'Calidad de imagen cristalina con streaming HD y 4K',
-      uk_servers: 'Servidores Rápidos en UK',
-      uk_desc: 'Streaming ultrarrápido desde servidores basados en UK',
+      uk_servers: 'Servidores Rápidos en Europe',
+      uk_desc: 'Streaming ultrarrápido desde servidores basados en Europe',
       support: 'Soporte 24/7',
       support_desc: 'Soporte al cliente disponible 24/7',
       compatible: 'Todos los Dispositivos',
@@ -445,22 +445,22 @@ export const translations = {
       question3: '¿Hay una prueba gratuita?',
       answer3: '¡Sí! Ofrecemos una prueba gratuita de 24 horas con acceso completo a todos los canales y características.',
       question4: '¿Qué canales están incluidos?',
-      answer4: 'Ofrecemos 33,000+ canales en vivo incluyendo UK, US, europeos, deportes, películas y canales internacionales.',
+      answer4: 'Ofrecemos 33,000+ canales en vivo incluyendo Europe, US, europeos, deportes, películas y canales internacionales.',
       still_have_questions: '¿Aún tienes preguntas?',
-      contact_support: 'Nuestro equipo de soporte en UK está disponible 24/7 para ayudarte',
+      contact_support: 'Nuestro equipo de soporte en Europe está disponible 24/7 para ayudarte',
       chat_whatsapp: 'Chat por WhatsApp',
       email_us: 'Envíanos un Correo'
     },
     // Footer
     footer: {
-      description: 'Servicio IPTV premium con 33,000+ canales en vivo y 150,000+ películas. Servidores rápidos en UK, soporte 24/7.',
+      description: 'Servicio IPTV premium con 33,000+ canales en vivo y 150,000+ películas. Servidores rápidos en Europe, soporte 24/7.',
       pages: 'Páginas',
       support: 'Soporte',
       legal: 'Legal',
       contact_us: 'Contáctanos',
       all_rights_reserved: 'Todos los derechos reservados.',
       secure_payment: 'Pago Seguro',
-      uk_servers: 'Servidores UK',
+      uk_servers: 'Servidores Europe',
       support_24_7: 'Soporte 24/7'
     },
     // Common

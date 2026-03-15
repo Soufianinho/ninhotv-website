@@ -7,24 +7,24 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const channelCategories = [
   {
-    name: 'UK Sports Channels',
+    name: 'European Sports Channels',
     icon: 'mdi:soccer',
-    channels: ['Sky Sports UK', 'BT Sport UK', 'Premier League UK', 'BBC Sport', 'ITV Sport', 'Eurosport UK', 'BoxNation UK','UFC'],
-    description: 'Watch all UK sports events live including Premier League, FA Cup, and more',
+    channels: ['Sky Sports Europe', 'BT Sport Europe', 'Premier League Europe', 'BBC Sport', 'ITV Sport', 'Eurosport Europe', 'BoxNation Europe','UFC'],
+    description: 'Watch all European sports events live including Premier League, FA Cup, and more',
     image: 'https://www.androidauthority.com/wp-content/uploads/2025/05/Samsung-TV-Plus-new-sports-channels.jpg'
   },
   {
-    name: 'UK Entertainment',
+    name: 'European Entertainment',
     icon: 'mdi:movie-open',
     channels: ['BBC iPlayer', 'ITV Hub', 'All 4', 'Channel 4', 'Channel 5', 'Sky Atlantic', 'NOW TV'],
-    description: 'Popular UK entertainment channels and streaming services',
+    description: 'Popular European entertainment channels and streaming services',
     image: 'https://static.independent.co.uk/2023/09/18/00/34301626cbbb3d454de44a8998d98c47Y29udGVudHNlYXJjaGFwaSwxNjk0ODc1MDIw-2.41916672.jpg?width=1200&auto=webp'
   },
   {
-    name: 'UK News Channels',
+    name: 'European News Channels',
     icon: 'mdi:newspaper',
     channels: ['BBC News', 'Sky News', 'ITV News', 'Channel 4 News', 'GB News', 'BBC World'],
-    description: 'Stay updated with UK and global news 24/7',
+    description: 'Stay updated with European and global news 24/7',
     image: 'https://www.nationalworld.com/jpim-static/image/2023/07/10/16/NWLD-composite-news-km.jpg?width=1200&auto=webp&quality=75&trim=0,0,0,0&crop='
   },
   {
@@ -37,15 +37,15 @@ const channelCategories = [
   {
     name: 'Kids & Family',
     icon: 'mdi:human-child',
-    channels: ['CBeebies', 'CBBC', 'Nickelodeon UK', 'Cartoon Network UK', 'Disney Channel UK', 'Pop Kids'],
-    description: 'Safe and entertaining content for UK kids and families',
+    channels: ['CBeebies', 'CBBC', 'Nickelodeon Europe', 'Cartoon Network Europe', 'Disney Channel Europe', 'Pop Kids'],
+    description: 'Safe and entertaining content for European kids and families',
     image: 'https://tse1.mm.bing.net/th/id/OIP.qx1Oku1Y33xX2tj6t1gAcgHaFy?rs=1&pid=ImgDetMain&o=7&rm=3'
   },
   {
     name: 'Music & Culture',
     icon: 'mdi:music',
-    channels: ['MTV UK', 'VH1', 'Kiss TV', 'The Box', 'Heart TV', 'Capital TV', 'Magic TV'],
-    description: 'UK music channels and cultural programming',
+    channels: ['MTV Europe', 'VH1', 'Kiss TV', 'The Box', 'Heart TV', 'Capital TV', 'Magic TV'],
+    description: 'European music channels and cultural programming',
     image: 'https://th.bing.com/th/id/R.5ffd7cdbdf0d68e8a9e0515963c0230d?rik=vt7iC3dNNUGtOQ&pid=ImgRaw&r=0'
   }
 ];
@@ -70,8 +70,8 @@ export default function Channels() {
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Access over <span className="text-red-500 font-semibold">33,000+ Live TV Channels</span> including all 
-            <span className="text-red-500 font-semibold"> UK IPTV</span> channels from around the world, 
-            featuring all your favorite <span className="text-green-400 font-semibold">British TV channels</span>, 
+            <span className="text-red-500 font-semibold"> European IPTV</span> channels from around the world, 
+            featuring all your favorite <span className="text-green-400 font-semibold">European TV channels</span>, 
             sports, movies, news and entertainment.
           </p>
         </motion.div>
@@ -188,10 +188,10 @@ export default function Channels() {
         >
           <div className="bg-gradient-to-r from-red-600 to-red-500 rounded-2xl p-8 max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Get Access to All UK IPTV Channels
+              Get Access to All European IPTV Channels
             </h2>
             <p className="text-white/90 mb-6">
-              Start your free trial and enjoy instant access to our complete UK IPTV channel lineup
+              Start your free Trial and enjoy instant access to our complete European IPTV channel lineup
               <span className="block text-sm mt-2">{t('hero.trusted_by')} ✓ No buffering ✓ HD quality ✓ 24/7 Support</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

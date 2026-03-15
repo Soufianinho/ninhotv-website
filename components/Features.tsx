@@ -11,7 +11,7 @@ export default function Features() {
     {
       icon: 'mdi:television-classic',
       title: '33,000+ Live Channels',
-      description: 'Access thousands of live TV channels from around the world, including all UK channels',
+      description: 'Access thousands of live TV channels from around the world, including all European channels',
       color: 'from-red-500 to-red-600'
     },
     {
@@ -23,7 +23,7 @@ export default function Features() {
     {
       icon: 'mdi:server',
       title: t('features.uk_servers'),
-      description: 'Lightning-fast servers located in the UK for optimal performance',
+      description: 'Lightning-fast servers located in Europe for optimal performance',
       color: 'from-green-500 to-green-600'
     },
     {
@@ -41,7 +41,7 @@ export default function Features() {
   {
     icon: 'mdi:headset',
     title: t('features.support'),
-    description: 'Round-the-clock customer support from our UK-based team',
+    description: 'Round-the-clock customer support from our Europe-based team',
     color: 'from-pink-500 to-pink-600'
   }
 ];

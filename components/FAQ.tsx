@@ -8,7 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const faqs = [
   {
     question: 'What is NinhoTV IPTV?',
-    answer: 'NinhoTV is a premium IPTV service that provides access to over 33,000 live TV channels and 150,000+ movies and VOD content. We offer high-quality streaming with fast UK servers and 24/7 customer support.',
+    answer: 'NinhoTV is a premium IPTV service that provides access to over 33,000 live TV channels and 150,000+ movies and VOD content. We offer high-quality streaming with fast European servers and 24/7 customer support.',
     category: 'general'
   },
   {
@@ -22,8 +22,8 @@ const faqs = [
     category: 'technical'
   },
   {
-    question: 'Do you offer UK channels?',
-    answer: 'Yes! We offer all major UK channels including BBC, ITV, Channel 4, Channel 5, Sky Sports, BT Sport, and many more. All your favorite British TV channels are available.',
+    question: 'Do you offer European channels?',
+    answer: 'Yes! We offer all major European channels including BBC, ITV, Channel 4, Channel 5, Sky Sports, BT Sport, and many more. All your favorite European TV channels are available.',
     category: 'channels'
   },
   {
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     question: 'What if I have technical issues?',
-    answer: 'Our UK-based support team is available 24/7 to help you. Contact us via WhatsApp, email, or live chat. We typically respond within minutes and resolve most issues quickly.',
+    answer: 'Our Europe-based support team is available 24/7 to help you. Contact us via WhatsApp, email, or live chat. We typically respond within minutes and resolve most issues quickly.',
     category: 'support'
   }
 ];
