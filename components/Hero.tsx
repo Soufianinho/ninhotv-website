@@ -25,10 +25,21 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden pt-20">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-transparent to-blue-500/10"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-20">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          style={{ transform: 'scale(1.1)' }}
+        >
+          <source src="https://www.apple.com/105/media/us/apple-tv-4k/2022/90c4e81a-c161-4f7f-9ea3-137ffd1054f5/anim/dolby/large_2x.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
       </div>
 
       {/* Floating Elements */}
@@ -365,11 +376,8 @@ export default function Hero() {
                 }}
                 className="relative z-10"
               >
-                <img
-                  src="https://wiztv.co.uk/wp-content/uploads/2025/10/iptv-uk-2.png"
-                  alt="NinhoTV IPTV Europe Service"
-                  className="w-full h-auto rounded-2xl shadow-2xl"
-                />
+                
+                
               </motion.div>
 
               {/* Floating Cards */}
