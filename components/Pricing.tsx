@@ -15,21 +15,21 @@ const basePlans = [
   },
   {
     name: '3 Months',
-    basePrice: 24.99,
+    basePrice: 19.99,
     originalPrice: 39.97,
     period: '/3 months',
     color: 'from-blue-600 to-blue-700'
   },
   {
     name: '6 Months',
-    basePrice: 29.99,
-    originalPrice: 49.94,
+    basePrice: 24.99,
+    originalPrice: 44.94,
     period: '/6 months',
     color: 'from-red-500 to-red-600'
   },
   {
     name: '12 Months',
-    basePrice: 49.99,
+    basePrice: 44.99,
     originalPrice: 79.99,
     period: '/year',
     color: 'from-purple-600 to-purple-700'
