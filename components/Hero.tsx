@@ -105,6 +105,67 @@ export default function Hero() {
               <span className="block text-green-400 font-medium mt-2">✓ {t('features.hd_quality')} ✓ {t('features.uk_servers')} ✓ {t('features.support')} ✓ {t('features.compatible')}</span>
             </motion.p>
 
+            {/* Special Offer Animation */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mb-8"
+            >
+              <motion.div
+                animate={{
+                  scale: [1, 1.05, 1],
+                  boxShadow: [
+                    "0 0 20px rgba(239, 68, 68, 0.5)",
+                    "0 0 40px rgba(239, 68, 68, 0.8)",
+                    "0 0 20px rgba(239, 68, 68, 0.5)"
+                  ]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="relative bg-gradient-to-r from-red-600 to-red-500 rounded-2xl p-6 max-w-md mx-auto lg:mx-0 border-2 border-red-400/50"
+              >
+                {/* Flash Badge */}
+                <motion.div
+                  animate={{
+                    rotate: [0, 10, -10, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{
+                    duration: 1,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute -top-3 -right-3 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-sm shadow-lg"
+                >
+                  ⚡ OFFRE FLASH
+                </motion.div>
+                
+                <div className="text-center">
+                  <div className="text-white/90 text-sm font-semibold mb-2">OFFRE LIMITÉE</div>
+                  <div className="text-white text-3xl font-bold mb-2">12 Mois</div>
+                  <div className="text-white text-4xl font-black mb-3">35€</div>
+                  <div className="text-yellow-300 text-lg font-bold mb-3 animate-pulse">
+                    🔥 ÉCONOMISEZ 40% 🔥
+                  </div>
+                  <div className="text-white/80 text-sm mb-4">
+                    ⏰ Valable 1 JOUR SEULEMENT
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => window.open(`https://wa.me/212644870099?text=🔥 OFFRE SPÉCIALE 🔥%0A%0ABonjour! Je souhaite souscrire à l'abonnement 12 Mois à 35€ (normalement 79.99€)%0A%0A📌 OFFRE FLASH - Valable 1 JOUR SEULEMENT!%0A%0A✅ 33,000+ Chaînes en Direct%0A✅ 150,000+ Films & VOD%0A✅ Qualité HD & 4K%0A✅ Support 24/7%0A✅ Compatible Tous Appareils%0A%0AVeuillez activer mon compte immédiatement! ⚡`, '_blank')}
+                    className="w-full bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+                  >
+                    Profiter Maintenant →
+                  </motion.button>
+                </div>
+              </motion.div>
+            </motion.div>
+
             {/* Mobile-Specific Free Trial Button */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}

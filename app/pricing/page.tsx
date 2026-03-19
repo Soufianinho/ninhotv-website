@@ -8,28 +8,28 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const basePlans = [
   {
     name: '1 Month',
-    basePrice: 11.99,
+    basePrice: 12,
     originalPrice: 19.99,
     period: '/month',
     color: 'from-gray-600 to-gray-700'
   },
   {
     name: '3 Months',
-    basePrice: 19.99,
+    basePrice: 20,
     originalPrice: 29.99,
     period: '/3 months',
     color: 'from-blue-600 to-blue-700'
   },
   {
     name: '6 Months',
-    basePrice: 27.99,
+    basePrice: 30,
     originalPrice: 44.99,
     period: '/6 months',
     color: 'from-red-500 to-red-600'
   },
   {
     name: '12 Months',
-    basePrice: 44.99,
+    basePrice: 35,
     originalPrice: 79.99,
     period: '/year',
     color: 'from-purple-600 to-purple-700'
