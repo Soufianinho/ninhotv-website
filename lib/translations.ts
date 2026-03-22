@@ -92,6 +92,22 @@ export const translations = {
       view_pricing: 'View Pricing',
       contact_us: 'Contact Us',
       subscribe_now: 'Subscribe Now'
+    },
+    // Free Trial
+    free_trial: {
+      title: 'Start Your <span class="text-red-500">FREE</span> Trial',
+      subtitle: 'Experience best IPTV service in Europe with no commitment',
+      trial_badge: '24-HOUR FREE TRIAL',
+      try_before_buy: 'Try Before You Buy',
+      trial_description: 'Get instant access to all our premium features completely free for 24 hours. No credit card required, no hidden fees, just pure entertainment.',
+      start_trial_now: 'Start Your Free Trial Now',
+      no_card_required: 'No credit card required • Instant activation • Cancel anytime',
+      secure_title: '100% Secure',
+      secure_desc: 'Your data is protected',
+      instant_title: 'Instant Setup',
+      instant_desc: 'Start watching immediately',
+      support_title: '24/7 Support',
+      support_desc: 'We\'re here to help'
     }
   },
   fr: {
@@ -187,6 +203,22 @@ export const translations = {
       view_pricing: 'Voir les Tarifs',
       contact_us: 'Nous Contacter',
       subscribe_now: 'S\'abonner Maintenant'
+    },
+    // Free Trial
+    free_trial: {
+      title: 'Commencez Votre Essai <span class="text-red-500">GRATUIT</span>',
+      subtitle: 'Expérimentez le meilleur service IPTV en Europe sans engagement',
+      trial_badge: 'ESSAI GRATUIT DE 24 HEURES',
+      try_before_buy: 'Essayez Avant d\'Acheter',
+      trial_description: 'Obtenez un accès instantané à toutes nos fonctionnalités premium gratuitement pendant 24 heures. Aucune carte de crédit requise, aucun frais caché, juste du divertissement pur.',
+      start_trial_now: 'Commencer Votre Essai Gratuit Maintenant',
+      no_card_required: 'Aucune carte de crédit requise • Activation instantanée • Annulation à tout moment',
+      secure_title: '100% Sécurisé',
+      secure_desc: 'Vos données sont protégées',
+      instant_title: 'Configuration Instantanée',
+      instant_desc: 'Commencez à regarder immédiatement',
+      support_title: 'Support 24/7',
+      support_desc: 'Nous sommes là pour vous aider'
     }
   },
   ar: {
@@ -472,6 +504,22 @@ export const translations = {
       view_pricing: 'Ver Precios',
       contact_us: 'Contáctanos',
       subscribe_now: 'Suscribirse Ahora'
+    },
+    // Free Trial
+    free_trial: {
+      title: 'Inicia Tu Prueba <span class="text-red-500">GRATUITA</span>',
+      subtitle: 'Experimenta el mejor servicio IPTV en Europa sin compromiso',
+      trial_badge: 'PRUEBA GRATUITA DE 24 HORAS',
+      try_before_buy: 'Prueba Antes de Comprar',
+      trial_description: 'Obtén acceso instantáneo a todas nuestras características premium completamente gratis por 24 horas. No se requiere tarjeta de crédito, sin tarifas ocultas, solo entretenimiento puro.',
+      start_trial_now: 'Iniciar Tu Prueba Gratuita Ahora',
+      no_card_required: 'No se requiere tarjeta de crédito • Activación instantánea • Cancela en cualquier momento',
+      secure_title: '100% Seguro',
+      secure_desc: 'Tus datos están protegidos',
+      instant_title: 'Configuración Instantánea',
+      instant_desc: 'Comienza a ver inmediatamente',
+      support_title: 'Soporte 24/7',
+      support_desc: 'Estamos aquí para ayudarte'
     }
   }
 };

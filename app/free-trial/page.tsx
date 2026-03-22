@@ -4,16 +4,26 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import Navigation from '@/components/Navigation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function FreeTrial() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
+  
   const handleFreeTrial = () => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
     }
 
+    const messages = {
+      en: 'Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV Europe IPTV. Please provide me with trial access details.',
+      fr: 'Bonjour! Je souhaite commencer un ESSAI GRATUIT de 24 HEURES de NinhoTV Europe IPTV. Veuillez me fournir les détails d\'accès à l\'essai.',
+      es: '¡Hola! Quiero comenzar una PRUEBA GRATUITA de 24 HORAS de NinhoTV Europe IPTV. Por favor proporcióneme los detalles de acceso de la prueba.',
+      ar: 'مرحبا! أريد بدء تجربة مجانية لمدة 24 ساعة من NinhoTV Europe IPTV. يرجى تزويدي بتفاصيل الوصول التجريبي.'
+    };
+
     setTimeout(() => {
-      window.open('https://wa.me/212644870099?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV. Please provide me with the trial access details.', '_blank');
+      window.open(`https://wa.me/212644870099?text=${encodeURIComponent(messages[t('common.language') === 'Language' ? 'en' : t('common.language') === 'Langue' ? 'fr' : t('common.language') === 'اللغة' ? 'ar' : 'es'])}`, '_blank');
     }, 300);
   };
 
@@ -39,11 +49,9 @@ export default function FreeTrial() {
               <Icon icon="mdi:television-classic" className="w-12 h-12 text-red-500" />
               <span className="text-3xl font-bold text-white">Ninho<span className="text-red-500">TV</span></span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              Start Your <span className="text-red-500">FREE</span> Trial
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4" dangerouslySetInnerHTML={{ __html: t('free_trial.title') }} />
             <p className="text-xl text-gray-300 mb-8">
-              Experience the best IPTV service in UK with no commitment
+              {t('free_trial.subtitle')}
             </p>
           </motion.div>
 
@@ -57,15 +65,14 @@ export default function FreeTrial() {
             <div className="mb-8">
               <div className="inline-flex items-center bg-green-500/20 rounded-full px-4 py-2 mb-6">
                 <Icon icon="mdi:gift" className="w-5 h-5 text-green-400 mr-2" />
-                <span className="text-green-400 font-semibold">24-HOUR FREE TRIAL</span>
+                <span className="text-green-400 font-semibold">{t('free_trial.trial_badge')}</span>
               </div>
               
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Try Before You Buy
+                {t('free_trial.try_before_buy')}
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Get instant access to all our premium features completely free for 24 hours. 
-                No credit card required, no hidden fees, just pure entertainment.
+                {t('free_trial.trial_description')}
               </p>
             </div>
 
@@ -106,11 +113,11 @@ export default function FreeTrial() {
                 className="bg-gradient-to-r from-red-500 to-red-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-red-500/25 transition-all duration-300 inline-flex items-center space-x-3"
               >
                 <Icon icon="mdi:play-circle" className="w-6 h-6" />
-                <span>Start Your Free Trial Now</span>
+                <span>{t('free_trial.start_trial_now')}</span>
               </motion.button>
               
               <p className="text-gray-400 mt-4 text-sm">
-                No credit card required • Instant activation • Cancel anytime
+                {t('free_trial.no_card_required')}
               </p>
             </motion.div>
           </motion.div>
@@ -123,9 +130,9 @@ export default function FreeTrial() {
             className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {[
-              { icon: 'mdi:shield-check', title: '100% Secure', desc: 'Your data is protected' },
-              { icon: 'mdi:clock-fast', title: 'Instant Setup', desc: 'Start watching immediately' },
-              { icon: 'mdi:help-circle', title: '24/7 Support', desc: 'We\'re here to help' }
+              { icon: 'mdi:shield-check', title: t('free_trial.secure_title'), desc: t('free_trial.secure_desc') },
+              { icon: 'mdi:clock-fast', title: t('free_trial.instant_title'), desc: t('free_trial.instant_desc') },
+              { icon: 'mdi:help-circle', title: t('free_trial.support_title'), desc: t('free_trial.support_desc') }
             ].map((item, index) => (
               <motion.div
                 key={index}

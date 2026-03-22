@@ -11,11 +11,11 @@ export default function BottomNavigation() {
   const { language, setLanguage, t } = useLanguage();
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' }
+    { code: 'fr', name: 'Français', flag: '��' },
+    { code: 'es', name: 'Español', flag: '��' },
+    { code: 'en', name: 'English', flag: '��' },
+    { code: 'ar', name: 'العربية', flag: '��' },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' }
   ];
 
   const handleLanguageChange = (langCode: string) => {
@@ -192,36 +192,86 @@ export default function BottomNavigation() {
             </div>
             
             {/* Language Options */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               {languages.map((lang, index) => (
                 <motion.button
                   key={lang.code}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ x: 8, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  transition={{ delay: index * 0.08 }}
+                  whileHover={{ 
+                    x: 12, 
+                    scale: 1.03,
+                    boxShadow: "0 8px 25px rgba(239, 68, 68, 0.15)"
+                  }}
+                  whileTap={{ scale: 0.97 }}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`w-full flex items-center space-x-4 px-5 py-4 rounded-2xl transition-all duration-300 ${
+                  className={`group relative w-full flex items-center space-x-4 px-6 py-4 rounded-2xl transition-all duration-300 overflow-hidden ${
                     language === lang.code 
-                      ? 'bg-gradient-to-r from-red-500/20 to-red-600/20 text-red-400 border border-red-500/40 shadow-lg shadow-red-500/20' 
-                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white border border-gray-600/30'
+                      ? 'bg-gradient-to-r from-red-600 to-red-500 text-white shadow-xl shadow-red-500/30 border border-red-400/50' 
+                      : 'bg-gradient-to-br from-gray-800/80 to-gray-700/60 text-gray-200 hover:from-gray-700/80 hover:to-gray-600/60 hover:text-white border border-gray-600/40 hover:border-gray-500/50 shadow-lg'
                   }`}
                 >
-                  <span className="text-3xl filter drop-shadow-sm">{lang.flag}</span>
+                  {/* Background Pattern for selected language */}
+                  {language === lang.code && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 0.1 }}
+                      className="absolute inset-0 bg-white/10"
+                    />
+                  )}
+                  
+                  {/* Flag with enhanced styling */}
+                  <motion.div 
+                    className="relative flex-shrink-0"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <span className="text-3xl filter drop-shadow-lg">{lang.flag}</span>
+                    {language === lang.code && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"
+                      />
+                    )}
+                  </motion.div>
+                  
+                  {/* Language info with better typography */}
                   <div className="flex-1 text-left">
-                    <span className="text-base font-medium block">{lang.name}</span>
-                    <span className="text-xs text-gray-400 uppercase tracking-wide">{lang.code}</span>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-lg font-bold tracking-tight">{lang.name}</span>
+                      {language === lang.code && (
+                        <motion.span
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          className="bg-green-400 text-black text-xs px-2 py-0.5 rounded-full font-bold uppercase"
+                        >
+                          Actif
+                        </motion.span>
+                      )}
+                    </div>
+                    <span className={`text-xs uppercase tracking-wider ${
+                      language === lang.code ? 'text-white/70' : 'text-gray-400'
+                    }`}>
+                      {lang.code}
+                    </span>
                   </div>
+                  
+                  {/* Check icon with animation */}
                   {language === lang.code && (
                     <motion.div
                       initial={{ scale: 0, rotate: -180 }}
                       animate={{ scale: 1, rotate: 0 }}
+                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
                       className="flex-shrink-0"
                     >
-                      <Icon icon="mdi:check-circle" className="w-6 h-6 text-red-400" />
+                      <Icon icon="mdi:check-circle" className="w-7 h-7 text-white drop-shadow-lg" />
                     </motion.div>
                   )}
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.button>
               ))}
             </div>
