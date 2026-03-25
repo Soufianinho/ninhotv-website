@@ -147,7 +147,7 @@ export default function Hero() {
                 <div className="text-center">
                   <div className="text-white/90 text-sm font-semibold mb-2">OFFRE LIMITÉE</div>
                   <div className="text-white text-3xl font-bold mb-2">12 Mois</div>
-                  <div className="text-white text-4xl font-black mb-3">35€</div>
+                  <div className="text-white text-4xl font-black mb-3">39.99€</div>
                   <div className="text-yellow-300 text-lg font-bold mb-3 animate-pulse">
                     🔥 ÉCONOMISEZ 40% 🔥
                   </div>

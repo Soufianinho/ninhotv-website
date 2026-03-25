@@ -8,28 +8,28 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const basePlans = [
   {
     name: '1 Month',
-    basePrice: 12,
+    basePrice: 11.99,
     originalPrice: 19.99,
     period: '/month',
     color: 'from-gray-600 to-gray-700'
   },
   {
     name: '3 Months',
-    basePrice: 20,
+    basePrice: 19.99,
     originalPrice: 29.99,
     period: '/3 months',
     color: 'from-blue-600 to-blue-700'
   },
   {
     name: '6 Months',
-    basePrice: 30,
+    basePrice: 27.99,
     originalPrice: 44.99,
     period: '/6 months',
     color: 'from-red-500 to-red-600'
   },
   {
     name: '12 Months',
-    basePrice: 35,
+    basePrice: 39.99,
     originalPrice: 79.99,
     period: '/year',
     color: 'from-purple-600 to-purple-700'
@@ -38,8 +38,8 @@ const basePlans = [
 
 const devicePricing = {
   1: 1.0,    // Base price
-  2: 1.5,    // 50% more
-  3: 2.0      // 100% more
+  2: 1.9,    // 50% more
+  3: 2.8      // 100% more
 };
 
 export default function PricingPage() {
