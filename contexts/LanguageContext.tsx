@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { translations, Language } from '@/lib/translations';
+import { detectLanguageFromCountrySync } from '@/lib/countryDetection';
 
 interface LanguageContextType {
   language: Language;
@@ -15,11 +16,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('fr');
 
   useEffect(() => {
-    // Load saved language from localStorage
+    // Load saved language from localStorage first
     if (typeof window !== 'undefined') {
       const savedLanguage = localStorage.getItem('preferred-language') as Language;
+      
       if (savedLanguage && translations[savedLanguage]) {
         setLanguage(savedLanguage);
+      } else {
+        // If no saved language, detect from country
+        const detectedLanguage = detectLanguageFromCountrySync();
+        if (translations[detectedLanguage as Language]) {
+          setLanguage(detectedLanguage as Language);
+        }
       }
     }
   }, []);

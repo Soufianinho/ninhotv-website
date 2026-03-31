@@ -15,11 +15,12 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
   const { language, setLanguage, t } = useLanguage();
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' }
+    { code: 'fr', name: 'Français', flag: '/flags/fr.svg' },
+    { code: 'es', name: 'Español', flag: '/flags/es.svg' },
+    { code: 'en', name: 'English', flag: '/flags/gb.svg' },
+    { code: 'nl', name: 'Nederlands', flag: '/flags/nl.svg' },
+    { code: 'ar', name: 'العربية', flag: '/flags/sa.svg' },
+    { code: 'de', name: 'Deutsch', flag: '/flags/de.svg' }
   ];
 
   const handleLanguageChange = (langCode: string) => {
@@ -125,9 +126,11 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
                 transition={{ delay: 0.4 }}
                 className="flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm border border-gray-600/30 hover:border-red-500/50 hover:from-red-500/10 hover:to-red-600/10 transition-all duration-300 shadow-lg hover:shadow-red-500/20"
               >
-                <span className="text-xl filter drop-shadow-sm">
-                  {languages.find(lang => lang.code === language)?.flag}
-                </span>
+                <img 
+                  src={languages.find(lang => lang.code === language)?.flag || '/flags/fr.svg'} 
+                  alt={`${languages.find(lang => lang.code === language)?.name} flag`}
+                  className="w-6 h-4 object-cover rounded-sm filter drop-shadow-sm"
+                />
                 <Icon icon="mdi:chevron-down" className="w-4 h-4 text-gray-300 group-hover:text-red-400 transition-all duration-300" />
               </motion.button>
               
@@ -146,7 +149,11 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
                           : 'text-gray-300 hover:bg-gray-700/50 hover:text-white hover:border-gray-600/50'
                       }`}
                     >
-                      <span className="text-2xl filter drop-shadow-sm">{lang.flag}</span>
+                      <img 
+                        src={lang.flag} 
+                        alt={`${lang.name} flag`}
+                        className="w-8 h-5 object-cover rounded-sm filter drop-shadow-sm"
+                      />
                       <div className="flex-1">
                         <span className="text-sm font-medium block">{lang.name}</span>
                         <span className="text-xs text-gray-400 capitalize">{lang.code}</span>

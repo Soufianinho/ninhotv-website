@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="300" height="200">
+  <rect fill="#006C35" width="3" height="2"/>
+  <rect fill="#FFFFFF" y="1.33" width="3" height="0.67"/>
+  <g fill="#FFFFFF">
+    <text x="1.5" y="1" font-family="Arial" font-size="0.8" text-anchor="middle" font-weight="bold">الله أكبر</text>
+  </g>
+</svg>

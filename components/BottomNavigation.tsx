@@ -11,11 +11,12 @@ export default function BottomNavigation() {
   const { language, setLanguage, t } = useLanguage();
 
   const languages = [
-    { code: 'fr', name: 'Français', flag: '��' },
-    { code: 'es', name: 'Español', flag: '��' },
-    { code: 'en', name: 'English', flag: '��' },
-    { code: 'ar', name: 'العربية', flag: '��' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' }
+    { code: 'fr', name: 'Français', flag: '/flags/fr.svg' },
+    { code: 'es', name: 'Español', flag: '/flags/es.svg' },
+    { code: 'en', name: 'English', flag: '/flags/gb.svg' },
+    { code: 'nl', name: 'Nederlands', flag: '/flags/nl.svg' },
+    { code: 'ar', name: 'العربية', flag: '/flags/sa.svg' },
+    { code: 'de', name: 'Deutsch', flag: '/flags/de.svg' }
   ];
 
   const handleLanguageChange = (langCode: string) => {
@@ -143,9 +144,11 @@ export default function BottomNavigation() {
                 : 'text-gray-400 hover:text-white hover:bg-gray-800/50 border border-transparent'
             }`}
           >
-            <span className="text-xl mb-1 filter drop-shadow-sm">
-              {languages.find(lang => lang.code === language)?.flag}
-            </span>
+            <img 
+              src={languages.find(lang => lang.code === language)?.flag || '/flags/fr.svg'} 
+              alt={`${languages.find(lang => lang.code === language)?.name} flag`}
+              className="w-5 h-3.5 object-cover rounded-sm filter drop-shadow-sm mb-1"
+            />
             <span className="text-xs font-medium">{t('common.language')}</span>
             {showLanguageMenu && (
               <motion.div
@@ -227,7 +230,11 @@ export default function BottomNavigation() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <span className="text-3xl filter drop-shadow-lg">{lang.flag}</span>
+                    <img 
+                      src={lang.flag} 
+                      alt={`${lang.name} flag`}
+                      className="w-10 h-6 object-cover rounded-sm filter drop-shadow-lg"
+                    />
                     {language === lang.code && (
                       <motion.div
                         initial={{ scale: 0 }}

@@ -15,15 +15,24 @@ export default function FreeTrial() {
       (window as any).fbq('track', 'Lead');
     }
 
-    const messages = {
+    const messages: Record<string, string> = {
       en: 'Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV Europe IPTV. Please provide me with trial access details.',
       fr: 'Bonjour! Je souhaite commencer un ESSAI GRATUIT de 24 HEURES de NinhoTV Europe IPTV. Veuillez me fournir les détails d\'accès à l\'essai.',
       es: '¡Hola! Quiero comenzar una PRUEBA GRATUITA de 24 HORAS de NinhoTV Europe IPTV. Por favor proporcióneme los detalles de acceso de la prueba.',
+      nl: 'Hallo! Ik wil een GRATIS PROEFPERIODE van 24 UUR van NinhoTV Europe IPTV starten. Gelieve me de proef toegangsgegevens te verstrekken.',
       ar: 'مرحبا! أريد بدء تجربة مجانية لمدة 24 ساعة من NinhoTV Europe IPTV. يرجى تزويدي بتفاصيل الوصول التجريبي.'
     };
 
     setTimeout(() => {
-      window.open(`https://wa.me/212644870099?text=${encodeURIComponent(messages[t('common.language') === 'Language' ? 'en' : t('common.language') === 'Langue' ? 'fr' : t('common.language') === 'اللغة' ? 'ar' : 'es'])}`, '_blank');
+      const currentLang = t('common.language');
+      let langCode = 'en';
+      
+      if (currentLang === 'Langue') langCode = 'fr';
+      else if (currentLang === 'Idioma') langCode = 'es';
+      else if (currentLang === 'Taal') langCode = 'nl';
+      else if (currentLang === 'اللغة') langCode = 'ar';
+      
+      window.open(`https://wa.me/212644870099?text=${encodeURIComponent(messages[langCode])}`, '_blank');
     }, 300);
   };
 

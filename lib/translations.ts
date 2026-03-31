@@ -521,6 +521,117 @@ export const translations = {
       support_title: 'Soporte 24/7',
       support_desc: 'Estamos aquí para ayudarte'
     }
+  },
+  nl: {
+    // Navigation
+    nav: {
+      home: 'Startpagina',
+      channels: 'Kanalen',
+      iptv_reseller: 'IPTV Wederverkoper',
+      features: 'Functies',
+      pricing: 'Prijzen',
+      faq: 'Veelgestelde Vragen',
+      start_free_trial: 'Gratis Proefperiode'
+    },
+    // Hero Section
+    hero: {
+      title: 'Beste IPTV Dienst in Europa',
+      subtitle: '33,000+ Live Kanalen & 150,000+ Films',
+      description: 'Ervaar premium entertainment met NinhoTV. Snelle Europese servers, HD kwaliteit, 24/7 support.',
+      get_started: 'Begin Nu',
+      start_trial: 'Gratis Proefperiode',
+      trusted_by: 'Vertrouwd door 50,000+ Europese klanten'
+    },
+    // Pricing
+    pricing: {
+      title: 'Eenvoudige Prijzen',
+      subtitle: 'Kies het perfecte plan voor uw entertainment behoeften',
+      try_before_buy: 'Probeer Voordat U Koopt',
+      free_trial_desc: 'Krijg een GRATIS 24-UUR PROEFPERIODE met volledige toegang',
+      start_trial_now: 'Start Gratis Proefperiode Nu',
+      choose_device_package: 'Kies Uw Apparaat Pakket',
+      device_desc: 'Selecteer hoeveel apparaten u tegelijk wilt gebruiken',
+      selected: 'Geselecteerd',
+      devices: 'apparaten',
+      month: '/maand',
+      months: '/maanden',
+      year: '/jaar',
+      most_popular: 'MEEST POPULAIR',
+      get_started: 'Begin Nu',
+      secure_payment: 'Veilige Betaling',
+      instant_activation: 'Directe Activatie',
+      cancel_anytime: 'Annuleer Elk Moment',
+      support_24_7: '24/7 Support',
+      back_to_home: 'Terug naar Startpagina'
+    },
+    // Features
+    features: {
+      title: 'Waarom NinhoTV Kiezen?',
+      subtitle: 'De beste IPTV ervaring met premium functies',
+      hd_quality: 'HD & 4K Kwaliteit',
+      hd_desc: 'Kristalheldere beeldkwaliteit met HD en 4K streaming',
+      uk_servers: 'Snelle Europese Servers',
+      uk_desc: 'Bliksemsnelle streaming vanaf Europese servers',
+      support: '24/7 Support',
+      support_desc: 'Klantenservice de klok rond',
+      compatible: 'Alle Apparaten',
+      compatible_desc: 'Werkt op al uw favoriete apparaten'
+    },
+    // FAQ
+    faq: {
+      title: 'Veelgestelde Vragen',
+      subtitle: 'Alles wat u moet weten over NinhoTV',
+      question1: 'Wat is IPTV?',
+      answer1: 'IPTV (Internet Protocol Televisie) levert TV content via internet in plaats van traditionele kabel of satelliet.',
+      question2: 'Hoeveel apparaten kan ik gebruiken?',
+      answer2: 'U kunt kiezen tussen 1, 2 of 3 apparaat verbindingen afhankelijk van uw abonnement plan.',
+      question3: 'Is er een gratis proefperiode?',
+      answer3: 'Ja! We bieden een gratis proefperiode van 24 uur met volledige toegang tot alle kanalen en functies.',
+      question4: 'Welke kanalen zijn inbegrepen?',
+      answer4: 'We bieden 33,000+ live kanalen inclusief Europese, Amerikaanse, sport, films en internationale kanalen.',
+      still_have_questions: 'Heeft u Nog Vragen?',
+      contact_support: 'Onze Europese support team is 24/7 beschikbaar om u te helpen',
+      chat_whatsapp: 'Chat op WhatsApp',
+      email_us: 'Stuur ons een Email'
+    },
+    // Footer
+    footer: {
+      description: 'Premium IPTV dienst met 33,000+ live kanalen en 150,000+ films. Snelle Europese servers, 24/7 support.',
+      pages: 'Pagina\'s',
+      support: 'Support',
+      legal: 'Juridisch',
+      contact_us: 'Neem Contact Op',
+      all_rights_reserved: 'Alle rechten voorbehouden.',
+      secure_payment: 'Veilige Betaling',
+      uk_servers: 'Europese Servers',
+      support_24_7: '24/7 Support'
+    },
+    // Common
+    common: {
+      language: 'Taal',
+      select_language: 'Selecteer Taal',
+      close: 'Sluiten',
+      learn_more: 'Leer Meer',
+      view_pricing: 'Bekijk Prijzen',
+      contact_us: 'Neem Contact Op',
+      subscribe_now: 'Abonneer Nu'
+    },
+    // Free Trial
+    free_trial: {
+      title: 'Start Uw <span class="text-red-500">GRATIS</span> Proefperiode',
+      subtitle: 'Ervaar de beste IPTV dienst in Europa zonder verplichtingen',
+      trial_badge: '24-UUR GRATIS PROEFPERIODE',
+      try_before_buy: 'Probeer Voordat U Koopt',
+      trial_description: 'Krijg direct toegang tot al onze premium functies helemaal gratis voor 24 uur. Geen credit card vereist, geen verborgen kosten, alleen pure entertainment.',
+      start_trial_now: 'Start Uw Gratis Proefperiode Nu',
+      no_card_required: 'Geen credit card vereist • Directe activatie • Annuleer elk moment',
+      secure_title: '100% Veilig',
+      secure_desc: 'Uw gegevens zijn beschermd',
+      instant_title: 'Directe Installatie',
+      instant_desc: 'Begin direct met kijken',
+      support_title: '24/7 Support',
+      support_desc: 'We zijn hier om u te helpen'
+    }
   }
 };
 
