@@ -8,7 +8,115 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function FreeTrial() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedDevice, setSelectedDevice] = useState('');
+  const [selectedApp, setSelectedApp] = useState('');
+  const [otherAppName, setOtherAppName] = useState('');
   const { t } = useLanguage();
+  
+  const devices = [
+    { 
+      id: 'firestick', 
+      name: 'Amazon Fire Stick', 
+      icon: 'mdi:amazon-fire-tv',
+      description: 'Perfect streaming device for IPTV'
+    },
+    { 
+      id: 'android-box', 
+      name: 'Android Box', 
+      icon: 'mdi:set-top-box',
+      description: 'Powerful Android TV boxes'
+    },
+    { 
+      id: 'smart-tv', 
+      name: 'Smart TV', 
+      icon: 'mdi:television',
+      description: 'Samsung, LG, Sony and more'
+    },
+    { 
+      id: 'android-phone', 
+      name: 'Android Phone', 
+      icon: 'mdi:android',
+      description: 'All Android smartphones'
+    },
+    { 
+      id: 'iphone-ipad', 
+      name: 'iPhone & iPad', 
+      icon: 'mdi:apple',
+      description: 'Apple iOS devices'
+    },
+    { 
+      id: 'pc-mac', 
+      name: 'PC & Mac', 
+      icon: 'mdi:laptop',
+      description: 'Windows and Mac computers'
+    },
+    { 
+      id: 'mag-box', 
+      name: 'MAG Box', 
+      icon: 'mdi:set-top-box',
+      description: 'MAG 250, 254, 322 devices'
+    },
+    { 
+      id: 'other', 
+      name: 'Other', 
+      icon: 'mdi:devices',
+      description: 'Any other IPTV compatible device'
+    }
+  ];
+  
+  const iptvApps = [
+    { 
+      id: 'iptv-smarters', 
+      name: 'IPTV Smarters Pro', 
+      icon: 'mdi:play-box-multiple',
+      description: 'Most popular IPTV app',
+      recommended: true
+    },
+    { 
+      id: 'xciptv', 
+      name: 'XCIPTV', 
+      icon: 'mdi:play-box-multiple',
+      description: 'Professional IPTV player'
+    },
+    { 
+      id: 'ibo-player', 
+      name: 'IBO Player', 
+      icon: 'mdi:play-box-multiple',
+      description: '(Recommended) Fast and reliable',
+      recommended: true
+    },
+    { 
+      id: 'cap-player', 
+      name: 'CAP Player', 
+      icon: 'mdi:play-box-multiple',
+      description: 'Simple and effective'
+    },
+    { 
+      id: 'hot-player', 
+      name: 'Hot Player', 
+      icon: 'mdi:play-box-multiple',
+      description: 'Lightweight IPTV app'
+    },
+    { 
+      id: 'xtream-codes', 
+      name: 'Xtream Codes', 
+      icon: 'mdi:play-box-multiple',
+      description: 'For Xtream compatible apps'
+    },
+    { 
+      id: 'tivimate', 
+      name: 'TiviMate', 
+      icon: 'mdi:play-box-multiple',
+      description: 'User-friendly interface'
+    },
+    { 
+      id: 'other', 
+      name: 'Other App', 
+      icon: 'mdi:play-box-multiple',
+      description: 'Any other IPTV application',
+      hasInput: true
+    }
+  ];
   
   const handleFreeTrial = () => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
@@ -16,11 +124,11 @@ export default function FreeTrial() {
     }
 
     const messages: Record<string, string> = {
-      en: 'Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV Europe IPTV. Please provide me with trial access details.',
-      fr: 'Bonjour! Je souhaite commencer un ESSAI GRATUIT de 24 HEURES de NinhoTV Europe IPTV. Veuillez me fournir les détails d\'accès à l\'essai.',
-      es: '¡Hola! Quiero comenzar una PRUEBA GRATUITA de 24 HORAS de NinhoTV Europe IPTV. Por favor proporcióneme los detalles de acceso de la prueba.',
-      nl: 'Hallo! Ik wil een GRATIS PROEFPERIODE van 24 UUR van NinhoTV Europe IPTV starten. Gelieve me de proef toegangsgegevens te verstrekken.',
-      ar: 'مرحبا! أريد بدء تجربة مجانية لمدة 24 ساعة من NinhoTV Europe IPTV. يرجى تزويدي بتفاصيل الوصول التجريبي.'
+      en: `Hello, I would like to request a FREE 24-HOUR TRIAL for NinhoTV Europe IPTV.\n\nDevice: ${selectedDevice ? t(`free_trial.${selectedDevice.replace('-', '_')}`) : 'Not specified'}\nApp: ${selectedApp === 'other' ? otherAppName || 'Not specified' : t(`free_trial.${selectedApp.replace('-', '_')}`)}\n\nPlease provide trial access details. Thank you.`,
+      fr: `Bonjour, je souhaite demander un ESSAI GRATUIT de 24 HEURES pour NinhoTV Europe IPTV.\n\nAppareil : ${selectedDevice ? t(`free_trial.${selectedDevice.replace('-', '_')}`) : 'Non spécifié'}\nApplication : ${selectedApp === 'other' ? otherAppName || 'Non spécifié' : t(`free_trial.${selectedApp.replace('-', '_')}`)}\n\nMerci de fournir les détails d'accès à l'essai.`,
+      es: `Hola, me gustaría solicitar una PRUEBA GRATUITA de 24 HORAS para NinhoTV Europe IPTV.\n\nDispositivo: ${selectedDevice ? t(`free_trial.${selectedDevice.replace('-', '_')}`) : 'No especificado'}\nAplicación: ${selectedApp === 'other' ? otherAppName || 'No especificado' : t(`free_trial.${selectedApp.replace('-', '_')}`)}\n\nPor favor proporcione los detalles de acceso de la prueba. Gracias.`,
+      nl: `Hallo, ik wil graag een GRATIS PROEFPERIODE van 24 UUR aanvragen voor NinhoTV Europe IPTV.\n\nApparaat: ${selectedDevice ? t(`free_trial.${selectedDevice.replace('-', '_')}`) : 'Niet gespecificeerd'}\nApp: ${selectedApp === 'other' ? otherAppName || 'Niet gespecificeerd' : t(`free_trial.${selectedApp.replace('-', '_')}`)}\n\nGelieve de proef toegangsgegevens te verstrekken. Dank u.`,
+      ar: `مرحبا، أود طلب تجربة مجانية لمدة 24 ساعة من NinhoTV Europe IPTV.\n\nالجهاز: ${selectedDevice ? t(`free_trial.${selectedDevice.replace('-', '_')}`) : 'غير محدد'}\nالتطبيق: ${selectedApp === 'other' ? otherAppName || 'غير محدد' : t(`free_trial.${selectedApp.replace('-', '_')}`)}\n\nيرجى تزويدي بتفاصيل الوصول التجريبي. شكرا.`
     };
 
     setTimeout(() => {
@@ -62,6 +170,156 @@ export default function FreeTrial() {
             <p className="text-xl text-gray-300 mb-8">
               {t('free_trial.subtitle')}
             </p>
+          </motion.div>
+
+          {/* Device Selection Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-8"
+          >
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                <Icon icon="mdi:devices" className="w-6 h-6 text-red-500 mr-2 inline-block" />
+                {t('free_trial.select_device')}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {devices.map((device, index) => (
+                  <motion.button
+                    key={device.id}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setSelectedDevice(device.id)}
+                    className={`relative p-4 rounded-xl border-2 transition-all duration-300 ${
+                      selectedDevice === device.id
+                        ? 'border-red-500 bg-gradient-to-br from-red-500/20 to-red-600/20 shadow-lg shadow-red-500/30'
+                        : 'border-gray-600 bg-gray-800/50 hover:border-red-400 hover:bg-gray-700/50 hover:shadow-lg'
+                    }`}
+                  >
+                    <Icon 
+                      icon={device.icon} 
+                      className={`w-8 h-8 mb-2 mx-auto ${
+                        selectedDevice === device.id ? 'text-red-400' : 'text-gray-400'
+                      }`} 
+                    />
+                    <div className="text-center">
+                      <div className={`text-sm font-semibold mb-1 ${
+                        selectedDevice === device.id ? 'text-white' : 'text-gray-300'
+                      }`}>
+                        {t(`free_trial.${device.id.replace('-', '_')}`)}
+                      </div>
+                      <div className="text-xs text-gray-500">
+                        {device.description}
+                      </div>
+                    </div>
+                    {selectedDevice === device.id && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="absolute -top-2 -right-2 bg-green-500 rounded-full p-1"
+                      >
+                        <Icon icon="mdi:check" className="w-4 h-4 text-white" />
+                      </motion.div>
+                    )}
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* IPTV App Selection Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mb-8"
+          >
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                <Icon icon="mdi:play-box-multiple" className="w-6 h-6 text-red-500 mr-2 inline-block" />
+                {t('free_trial.select_iptv_app')}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {iptvApps.map((app, index) => (
+                  <motion.button
+                    key={app.id}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.6 + index * 0.05 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      setSelectedApp(app.id);
+                      if (app.id !== 'other') {
+                        setOtherAppName('');
+                      }
+                    }}
+                    className={`relative p-4 rounded-xl border-2 transition-all duration-300 ${
+                      selectedApp === app.id
+                        ? 'border-red-500 bg-gradient-to-br from-red-500/20 to-red-600/20 shadow-lg shadow-red-500/30'
+                        : 'border-gray-600 bg-gray-800/50 hover:border-red-400 hover:bg-gray-700/50 hover:shadow-lg'
+                    }`}
+                  >
+                    <Icon 
+                      icon={app.icon} 
+                      className={`w-8 h-8 mb-2 mx-auto ${
+                        selectedApp === app.id ? 'text-red-400' : 'text-gray-400'
+                      }`} 
+                    />
+                    <div className="text-center">
+                      <div className="flex items-center justify-center mb-1">
+                        <div className={`text-sm font-semibold ${
+                          selectedApp === app.id ? 'text-white' : 'text-gray-300'
+                        }`}>
+                          {t(`free_trial.${app.id.replace('-', '_')}`)}
+                        </div>
+                        {app.recommended && (
+                          <span className="ml-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold">
+                            {t('free_trial.recommended')}
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-xs text-gray-500">
+                        {app.description}
+                      </div>
+                    </div>
+                    {selectedApp === app.id && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="absolute -top-2 -right-2 bg-green-500 rounded-full p-1"
+                      >
+                        <Icon icon="mdi:check" className="w-4 h-4 text-white" />
+                      </motion.div>
+                    )}
+                  </motion.button>
+                ))}
+              </div>
+              
+              {/* Other App Input */}
+              {selectedApp === 'other' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 p-4 bg-gray-700/50 rounded-xl border border-gray-600"
+                >
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    {t('free_trial.specify_app_name')}
+                  </label>
+                  <input
+                    type="text"
+                    value={otherAppName}
+                    onChange={(e) => setOtherAppName(e.target.value)}
+                    placeholder={t('free_trial.enter_app_name')}
+                    className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all duration-300"
+                  />
+                </motion.div>
+              )}
+            </div>
           </motion.div>
 
           {/* Main Trial Card */}
