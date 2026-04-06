@@ -157,7 +157,7 @@ export default function Hero() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => window.open(`https://wa.me/212644870099?text=🔥 OFFRE SPÉCIALE 🔥%0A%0ABonjour! Je souhaite souscrire à l'abonnement 12 Mois à 35€ (normalement 79.99€)%0A%0A📌 OFFRE FLASH - Valable 1 JOUR SEULEMENT!%0A%0A✅ 33,000+ Chaînes en Direct%0A✅ 150,000+ Films & VOD%0A✅ Qualité HD & 4K%0A✅ Support 24/7%0A✅ Compatible Tous Appareils%0A%0AVeuillez activer mon compte immédiatement! ⚡`, '_blank')}
+                    onClick={() => window.open(`https://wa.me/212644870099?text=🔥 OFFRE SPÉCIALE 🔥%0A%0ABonjour! Je souhaite souscrire à l'abonnement 12 Mois à 39.99€ (normalement 79.99€)%0A%0A📌 OFFRE FLASH - Valable 1 JOUR SEULEMENT!%0A%0A✅ 50,000+ Chaînes en Direct%0A✅ 160,000+ Films & VOD%0A✅ Qualité HD & 4K%0A✅ Support 24/7%0A✅ Compatible Tous Appareils%0A%0AVeuillez activer mon compte immédiatement! ⚡`, '_blank')}
                     className="w-full bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
                   >
                     Profiter Maintenant →
