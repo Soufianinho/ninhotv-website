@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import Navigation from '@/components/Navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { storeUserData, trackCustomEvent } from '@/lib/userDataTracking';
+import UserInfoCollector from '@/components/UserInfoCollector';
 
 export default function FreeTrial() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -119,6 +121,17 @@ export default function FreeTrial() {
   ];
   
   const handleFreeTrial = () => {
+    // Track Lead event with advanced matching
+    trackCustomEvent('FreeTrialRequest', {
+      country: getCountryFromLanguage(),
+    }, {
+      device: selectedDevice || 'not_specified',
+      app: selectedApp === 'other' ? otherAppName || 'other_app' : selectedApp || 'not_specified',
+      page: 'free_trial',
+      action: 'request_trial'
+    });
+
+    // Original Meta Pixel tracking for backward compatibility
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
     }
@@ -142,6 +155,19 @@ export default function FreeTrial() {
       
       window.open(`https://wa.me/212644870099?text=${encodeURIComponent(messages[langCode])}`, '_blank');
     }, 300);
+  };
+
+  // Helper function to get country from language
+  const getCountryFromLanguage = () => {
+    const currentLang = t('common.language');
+    const countryMap: Record<string, string> = {
+      'Language': 'US',
+      'Langue': 'FR',
+      'Idioma': 'ES',
+      'Taal': 'NL',
+      'اللغة': 'SA'
+    };
+    return countryMap[currentLang] || 'US';
   };
 
   return (
@@ -321,6 +347,11 @@ export default function FreeTrial() {
               )}
             </div>
           </motion.div>
+
+          {/* User Information Collector */}
+          <UserInfoCollector onUserInfoCollected={(data) => {
+            console.log('User info collected:', data);
+          }} />
 
           {/* Main Trial Card */}
           <motion.div

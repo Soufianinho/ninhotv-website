@@ -41,7 +41,49 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1677283240099442');
+
+// Advanced matching data collection
+function getAdvancedMatchingData() {
+  const data = {};
+  
+  // Try to get user data from localStorage
+  if (typeof window !== 'undefined') {
+    try {
+      const email = localStorage.getItem('user_email') || localStorage.getItem('email');
+      if (email) data.em = email;
+      
+      const phone = localStorage.getItem('user_phone') || localStorage.getItem('phone');
+      if (phone) data.ph = phone;
+      
+      const firstName = localStorage.getItem('user_firstname') || localStorage.getItem('first_name');
+      if (firstName) data.fn = firstName;
+      
+      const lastName = localStorage.getItem('user_lastname') || localStorage.getItem('last_name');
+      if (lastName) data.ln = lastName;
+      
+      // Country detection from timezone
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const timezoneCountryMap = {
+        'Europe/London': 'GB', 'Europe/Paris': 'FR', 'Europe/Madrid': 'ES',
+        'Europe/Amsterdam': 'NL', 'Europe/Berlin': 'DE', 'Asia/Riyadh': 'SA',
+        'Asia/Dubai': 'AE', 'Africa/Cairo': 'EG', 'Africa/Casablanca': 'MA',
+        'America/New_York': 'US', 'America/Los_Angeles': 'US'
+      };
+      
+      if (timezoneCountryMap[timeZone]) {
+        data.country = timezoneCountryMap[timeZone];
+      }
+    } catch (error) {
+      console.warn('Error collecting advanced matching data:', error);
+    }
+  }
+  
+  return data;
+}
+
+// Initialize pixel with advanced matching
+const advancedData = getAdvancedMatchingData();
+fbq('init', '1677283240099442', advancedData);
 fbq('track', 'PageView');`,
           }}
         />

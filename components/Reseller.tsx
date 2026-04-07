@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 const resellerPlans = [
   {
     name: 'Starter Reseller',
-    price: '£199.99',
+    price: '€199.99',
     credits: 120,
     features: [
       '120 Credits',
@@ -23,7 +23,7 @@ const resellerPlans = [
   },
   {
     name: 'Professional Reseller',
-    price: '£379.99',
+    price: '€379.99',
     credits: 240,
     features: [
       '250 Credits',
@@ -41,7 +41,7 @@ const resellerPlans = [
   },
   {
     name: 'Enterprise Reseller',
-    price: '£549.99',
+    price: '€549.99',
     credits: 360,
     features: [
       '500 Credits',
