@@ -4,62 +4,42 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const basePlans = [
-  {
-    name: '1 Month',
-    basePrice: 11.99,
-    originalPrice: 19.99,
-    period: '/month',
-    color: 'from-gray-600 to-gray-700'
-  },
-  {
-    name: '3 Months',
-    basePrice: 19.99,
-    originalPrice: 39.97,
-    period: '/3 months',
-    color: 'from-blue-600 to-blue-700'
-  },
-  {
-    name: '6 Months',
-    basePrice: 29.99,
-    originalPrice: 44.94,
-    period: '/6 months',
-    color: 'from-red-500 to-red-600'
-  },
-  {
-    name: '12 Months',
-    basePrice: 39.99,
-    originalPrice: 79.99,
-    period: '/year',
-    color: 'from-purple-600 to-purple-700'
-  }
-];
-
-const devicePricing = {
-  1: 1.0,    // Base price
-  2: 1.9,    // 50% more
-  3: 2.8      // 100% more
-};
+import { getAllPricingOptions, formatPrice } from '@/lib/pricing';
 
 export default function Pricing() {
   const [selectedDevices, setSelectedDevices] = useState(1);
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
-  // Calculate plans based on selected devices
-  const plans = basePlans.map(plan => ({
+  // Get pricing options based on language
+  const pricingOptions = getAllPricingOptions(language);
+
+  const devicePricing = {
+    1: 1.0,    // Base price
+    2: 1.9,    // 50% more
+    3: 2.8      // 100% more
+  };
+
+  // Calculate plans based on selected devices and language
+  const plans = pricingOptions.map((plan) => ({
     ...plan,
-    price: `€${(plan.basePrice * devicePricing[selectedDevices as keyof typeof devicePricing]).toFixed(2)}`,
+    name: plan.period,
+    basePrice: plan.price,
+    period: plan.period,
+    color: plan.months === 1 ? 'from-gray-600 to-gray-700' : 
+           plan.months === 3 ? 'from-blue-600 to-blue-700' : 
+           plan.months === 6 ? 'from-red-500 to-red-600' : 
+           'from-purple-600 to-purple-700',
+    price: formatPrice(plan.price * devicePricing[selectedDevices as keyof typeof devicePricing], language),
     features: [
       '33,000+ Live Channels',
       '150,000+ Movies & VOD',
       t('features.hd_quality'),
       `${selectedDevices} ${t('pricing.devices')}${selectedDevices > 1 ? 's' : ''}`,
-      t('features.support'),
-      'EPG Guide'
+      'Fast UK Servers',
+      '24/7 Support'
     ],
-    popular: plan.name === '12 Months'
+    popular: plan.popular
   }));
 
   const handleDeviceSelect = (devices: number) => {
@@ -167,14 +147,14 @@ export default function Pricing() {
                 price: '+50%', 
                 description: 'Great for couples or small families',
                 icon: 'mdi:tablet',
-                color: 'from-blue-600 to-blue-700'
+                color: 'from-gray-600 to-gray-700'
               },
               { 
                 devices: 3, 
                 price: '+100%', 
                 description: 'Ideal for families or sharing',
                 icon: 'mdi:television',
-                color: 'from-red-600 to-red-700'
+                color: 'from-gray-600 to-gray-700'
               }
             ].map((option, index) => (
               <motion.div

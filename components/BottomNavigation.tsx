@@ -12,9 +12,9 @@ export default function BottomNavigation() {
 
   const languages = [
     { code: 'fr', name: 'Français', flag: '/flags/fr.svg' },
-    { code: 'es', name: 'Español', flag: '/flags/es.svg' },
-    { code: 'en', name: 'English', flag: '/flags/gb.svg' },
     { code: 'nl', name: 'Nederlands', flag: '/flags/nl.svg' },
+    { code: 'en', name: 'English', flag: '/flags/gb.svg' },
+    { code: 'es', name: 'Español', flag: '/flags/es.svg' },
     { code: 'ar', name: 'العربية', flag: '/flags/sa.svg' },
     { code: 'de', name: 'Deutsch', flag: '/flags/de.svg' }
   ];
