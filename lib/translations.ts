@@ -720,6 +720,139 @@ export const translations = {
       specify_app_name: 'Specificeer alsjebief de naam van uw app',
       enter_app_name: 'Voer de naam van de app in'
     }
+  },
+  sv: {
+    // Navigation
+    nav: {
+      home: 'Hem',
+      channels: 'Kanaler',
+      iptv_reseller: 'IPTV-återförsäljare',
+      features: 'Funktioner',
+      pricing: 'Priser',
+      faq: 'FAQ',
+      start_free_trial: 'Starta Gratis Provperiod'
+    },
+    // Hero Section
+    hero: {
+      title: 'Bästa IPTV-tjänsten i Europa',
+      subtitle: '33,000+ Live-kanaler & 150,000+ Filmer',
+      description: 'Upplev premium underhållning med NinhoTV. Snabba europeiska servrar, HD-kvalitet, 24/7 support.',
+      get_started: 'Kom Igång',
+      start_trial: 'Gratis Provperiod',
+      trusted_by: 'Betrodd av 50,000+ europeiska kunder'
+    },
+    // Pricing
+    pricing: {
+      title: 'Enkla Priser',
+      subtitle: 'Välj det perfekta paketet för dina underhållningsbehov',
+      try_before_buy: 'Prova Innan Du Köper',
+      free_trial_desc: 'Få en GRATIS 24-TIMMARS PROVPERIOD med full tillgång',
+      start_trial_now: 'Starta Gratis Provperiod Nu',
+      choose_device_package: 'Välj Din Enhetspaket',
+      device_desc: 'Välj hur många enheter du vill använda samtidigt',
+      selected: 'Vald',
+      devices: 'enheter',
+      month: '/månad',
+      months: '/månader',
+      year: '/år',
+      most_popular: 'MEST POPULÄR',
+      get_started: 'Kom Igång',
+      secure_payment: 'Säker Betalning',
+      instant_activation: 'Omedelbar Aktivering',
+      cancel_anytime: 'Avsluta När Som Helst',
+      support_24_7: '24/7 Support',
+      back_to_home: 'Tillbaka till Hem'
+    },
+    // Features
+    features: {
+      title: 'Varför Välja NinhoTV?',
+      subtitle: 'Bästa IPTV-upplevelsen med premiumfunktioner',
+      hd_quality: 'HD & 4K Kvalitet',
+      hd_desc: 'Kristallklar bildkvalitet med HD och 4K-streaming',
+      uk_servers: 'Snabba Europeiska Servrar',
+      uk_desc: 'Blixtsnabb streaming från europeiska servrar',
+      support: '24/7 Support',
+      support_desc: 'Kundsupport dygnet runt',
+      compatible: 'Alla Enheter',
+      compatible_desc: 'Fungerar på alla dina favoritenheter'
+    },
+    // FAQ
+    faq: {
+      title: 'Vanliga Frågor',
+      subtitle: 'Allt du behöver veta om NinhoTV',
+      question1: 'Vad är IPTV?',
+      answer1: 'IPTV (Internet Protocol Television) levererar TV-innehåll via internet istället för traditionell kabel eller satellit.',
+      question2: 'Hur många enheter kan jag använda?',
+      answer2: 'Du kan välja mellan 1, 2 eller 3 enhetsanslutningar beroende på din prenumerationsplan.',
+      question3: 'Finns det en gratis provperiod?',
+      answer3: 'Ja! Vi erbjuder en 24-timmars gratis provperiod med full tillgång till alla kanaler och funktioner.',
+      question4: 'Vilka kanaler ingår?',
+      answer4: 'Vi erbjuder 33,000+ live-kanaler inklusive europeiska, amerikanska, sport, film och internationella kanaler.',
+      still_have_questions: 'Har Du Fler Frågor?',
+      contact_support: 'Vår europeiska supportteam är tillgänglig 24/7 för att hjälpa dig',
+      chat_whatsapp: 'Chatta på WhatsApp',
+      email_us: 'Skicka E-post till Oss'
+    },
+    // Footer
+    footer: {
+      description: 'Premium IPTV-tjänst med 33,000+ live-kanaler och 150,000+ filmer. Snabba europeiska servrar, 24/7 support.',
+      pages: 'Sidor',
+      support: 'Support',
+      legal: 'Juridiskt',
+      contact_us: 'Kontakta Oss',
+      all_rights_reserved: 'Alla rättigheter reserverade.',
+      secure_payment: 'Säker Betalning',
+      uk_servers: 'Europeiska Servrar',
+      support_24_7: '24/7 Support'
+    },
+    // Common
+    common: {
+      language: 'Språk',
+      select_language: 'Välj Språk',
+      close: 'Stäng',
+      learn_more: 'Läs Mer',
+      view_pricing: 'Visa Priser',
+      contact_us: 'Kontakta Oss',
+      subscribe_now: 'Prenumerera Nu'
+    },
+    // Free Trial
+    free_trial: {
+      title: 'Starta Din <span class="text-red-500">GRATIS</span> Provperiod',
+      subtitle: 'Upplev den bästa IPTV-tjänsten i Europa utan förpliktelser',
+      trial_badge: '24-TIMMARS GRATIS PROVPERIOD',
+      try_before_buy: 'Prova Innan Du Köper',
+      trial_description: 'Få omedelbar tillgång till alla våra premiumfunktioner helt gratis i 24 timmar. Inget kreditkort krävs, inga dolda avgifter, bara ren underhållning.',
+      start_trial_now: 'Starta Din Gratis Provperiod Nu',
+      no_card_required: 'Inget kreditkort krävs • Omedelbar aktivering • Avsluta när som helst',
+      secure_title: '100% Säker',
+      secure_desc: 'Dina data är skyddade',
+      instant_title: 'Omedelbar Installation',
+      instant_desc: 'Börja titta direkt',
+      support_title: '24/7 Support',
+      support_desc: 'Vi är här för att hjälpa dig',
+      select_device: 'Välj Din Enhet',
+      firestick: 'Amazon Fire Stick',
+      android_box: 'Android Box',
+      smart_tv: 'Smart TV',
+      android_phone: 'Android-telefon',
+      iphone_ipad: 'iPhone & iPad',
+      pc_mac: 'PC & Mac',
+      mag_box: 'MAG Box',
+      other: 'Annan',
+      device_not_specified: 'Ej specificerad',
+      select_iptv_app: 'Välj Din IPTV-app',
+      iptv_smarters: 'IPTV Smarters Pro',
+      xciptv: 'XCIPTV',
+      ibo_player: 'IBO Player',
+      cap_player: 'CAP Player',
+      hot_player: 'Hot Player',
+      xtream_codes: 'Xtream Codes',
+      tivimate: 'TiviMate',
+      other_app: 'Annan App',
+      recommended: 'Rekommenderad',
+      specify_app_name: 'Ange namnet på din app',
+      enter_app_name: 'Ange appnamn'
+    }
   }
 };
 

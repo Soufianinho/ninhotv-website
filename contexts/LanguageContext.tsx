@@ -13,7 +13,7 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('fr');
+  const [language, setLanguage] = useState<Language>('sv');
 
   useEffect(() => {
     // Load saved language from localStorage first
@@ -23,11 +23,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       if (savedLanguage && translations[savedLanguage]) {
         setLanguage(savedLanguage);
       } else {
-        // If no saved language, detect from country
-        const detectedLanguage = detectLanguageFromCountrySync();
-        if (translations[detectedLanguage as Language]) {
-          setLanguage(detectedLanguage as Language);
-        }
+        // If no saved language, default to Swedish
+        setLanguage('sv');
       }
     }
   }, []);
