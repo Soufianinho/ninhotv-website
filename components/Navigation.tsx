@@ -58,11 +58,6 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
   };
 
   const handleFreeTrial = () => {
-    // Trigger Meta Pixel Lead event
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
-    
     navigateToPage('/free-trial');
   };
 
@@ -188,20 +183,17 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
           {/* Spacer for mobile layout */}
           <div className="flex-1 lg:hidden"></div>
 
-          {/* Mobile Menu Button - Hidden since we use bottom nav */}
-          <div className="hidden">
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-white p-2"
-            >
-              <Icon 
-                icon={isMenuOpen ? "mdi:close" : "mdi:menu"} 
-                className="w-6 h-6" 
-              />
-            </motion.button>
-          </div>
+          {/* Mobile Free Trial Button */}
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            onClick={handleFreeTrial}
+            className="lg:hidden bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-4 py-2 rounded-full font-semibold text-sm transition-all duration-200 shadow-lg hover:shadow-red-500/25 flex items-center space-x-1"
+          >
+            <Icon icon="mdi:play-circle" className="w-4 h-4" />
+            <span>{t('nav.start_free_trial')}</span>
+          </motion.button>
         </div>
       </div>
     </motion.nav>

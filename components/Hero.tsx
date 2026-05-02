@@ -15,10 +15,6 @@ export default function Hero() {
   };
 
   const handleFreeTrial = () => {
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
-
     setTimeout(() => {
       window.location.href = '/free-trial';
     }, 300);

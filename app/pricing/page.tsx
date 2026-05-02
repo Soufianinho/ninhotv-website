@@ -62,12 +62,8 @@ export default function PricingPage() {
   };
 
   const handleFreeTrial = () => {
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
-
     setTimeout(() => {
-      window.open(`https://wa.me/212644870099?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV UK IPTV for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''}.`, '_blank');
+      window.open(`https://wa.me/212644870099?text=Hi! I want to start a FREE 24-HOUR TRIAL of NinhoTV Europe IPTV for ${selectedDevices} device${selectedDevices > 1 ? 's' : ''}.`, '_blank');
     }, 300);
   };
 

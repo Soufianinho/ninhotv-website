@@ -121,6 +121,11 @@ export default function FreeTrial() {
   ];
   
   const handleFreeTrial = () => {
+    // Trigger Meta Pixel Lead event when user clicks the red button
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead');
+    }
+
     // Track Lead event with advanced matching
     trackCustomEvent('FreeTrialRequest', {
       country: getCountryFromLanguage(),
@@ -131,11 +136,7 @@ export default function FreeTrial() {
       action: 'request_trial'
     });
 
-    // Original Meta Pixel tracking for backward compatibility
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
-
+    
     const messages: Record<string, string> = {
       en: `Hello, I would like to request a FREE 24-HOUR TRIAL for NinhoTV Europe IPTV.\n\nDevice: ${selectedDevice ? t(`free_trial.${selectedDevice.replace('-', '_')}`) : 'Not specified'}\nApp: ${selectedApp === 'other' ? otherAppName || 'Not specified' : t(`free_trial.${selectedApp.replace('-', '_')}`)}\n\nPlease provide trial access details. Thank you.`,
       fr: `Bonjour, je souhaite demander un ESSAI GRATUIT de 24 HEURES pour NinhoTV Europe IPTV.\n\nAppareil : ${selectedDevice ? t(`free_trial.${selectedDevice.replace('-', '_')}`) : 'Non spécifié'}\nApplication : ${selectedApp === 'other' ? otherAppName || 'Non spécifié' : t(`free_trial.${selectedApp.replace('-', '_')}`)}\n\nMerci de fournir les détails d'accès à l'essai.`,
