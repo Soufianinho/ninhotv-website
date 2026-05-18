@@ -11,8 +11,8 @@ export default function BottomNavigation() {
   const { language, setLanguage, t } = useLanguage();
 
   const languages = [
-    { code: 'sv', name: 'Svenska', flag: '/flags/se.svg' },
     { code: 'fr', name: 'Français', flag: '/flags/fr.svg' },
+    { code: 'sv', name: 'Svenska', flag: '/flags/se.svg' },
     { code: 'nl', name: 'Nederlands', flag: '/flags/nl.svg' },
     { code: 'en', name: 'English', flag: '/flags/gb.svg' },
     { code: 'es', name: 'Español', flag: '/flags/es.svg' },
