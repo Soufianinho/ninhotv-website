@@ -15,10 +15,10 @@ export interface PricingConfig {
 
 // Universal pricing for all countries
 export const universalPricing: PricingConfig = {
-  1: { price: 11.99},
-  3: { price: 19.99},
-  6: { price: 27.99},
-  12: { price: 39.99}
+  1: { price: 14.99},
+  3: { price: 24.99},
+  6: { price: 32.99},
+  12: { price: 44.99}
 };
 
 // Swedish pricing in SEK
