@@ -1,39 +1,11 @@
 'use client';
 
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useState, useEffect } from 'react';
 
 export default function Hero() {
   const { t } = useLanguage();
-  const [timeLeft, setTimeLeft] = useState({ hours: 23, minutes: 59, seconds: 59 });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        let { hours, minutes, seconds } = prev;
-        if (seconds > 0) {
-          seconds--;
-        } else if (minutes > 0) {
-          minutes--;
-          seconds = 59;
-        } else if (hours > 0) {
-          hours--;
-          minutes = 59;
-          seconds = 59;
-        } else {
-          // Reset to 24 hours when countdown ends
-          hours = 23;
-          minutes = 59;
-          seconds = 59;
-        }
-        return { hours, minutes, seconds };
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
@@ -97,127 +69,7 @@ export default function Hero() {
           <Icon icon="mdi:television" className="w-16 h-16 text-blue-500/30" />
         </motion.div>
       </div>
-
-      {/* World Cup Offer Banner */}
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="container mx-auto px-4 relative z-20 mt-4"
-      >
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            animate={{
-              scale: [1, 1.02, 1],
-              boxShadow: [
-                "0 0 20px rgba(255, 215, 0, 0.3)",
-                "0 0 40px rgba(255, 215, 0, 0.5)",
-                "0 0 20px rgba(255, 215, 0, 0.3)"
-              ]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 rounded-2xl p-6 shadow-2xl border-4 border-yellow-300"
-          >
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              {/* Left: Trophy and Title */}
-              <div className="flex items-center gap-4">
-                <motion.div
-                  animate={{
-                    rotate: [0, 10, -10, 10, -10, 0]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 1
-                  }}
-                  className="text-5xl"
-                >
-                  🏆
-                </motion.div>
-                <div>
-                  <motion.h3
-                    animate={{
-                      scale: [1, 1.05, 1]
-                    }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Infinity
-                    }}
-                    className="text-2xl md:text-3xl font-bold text-black"
-                  >
-                    Coupe du Monde
-                  </motion.h3>
-                  <p className="text-black/80 font-semibold">Offre Spéciale</p>
-                </div>
-              </div>
-
-              {/* Center: Discount */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.1, 1],
-                  rotate: [-2, 2, -2]
-                }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity
-                }}
-                className="bg-red-600 text-white px-6 py-3 rounded-full font-bold text-3xl md:text-4xl shadow-lg"
-              >
-                -80%
-              </motion.div>
-
-              {/* Right: Countdown */}
-              <div className="flex items-center gap-2">
-                <Icon icon="mdi:clock" className="w-6 h-6 text-black" />
-                <div className="flex gap-2">
-                  {[
-                    { value: timeLeft.hours, label: 'H' },
-                    { value: timeLeft.minutes, label: 'M' },
-                    { value: timeLeft.seconds, label: 'S' }
-                  ].map((item, index) => (
-                    <motion.div
-                      key={index}
-                      animate={{
-                        scale: [1, 1.1, 1]
-                      }}
-                      transition={{
-                        duration: 0.5,
-                        repeat: Infinity,
-                        delay: index * 0.1
-                      }}
-                      className="bg-black text-yellow-400 px-3 py-2 rounded-lg text-center min-w-[50px]"
-                    >
-                      <div className="text-xl md:text-2xl font-bold">
-                        {String(item.value).padStart(2, '0')}
-                      </div>
-                      <div className="text-xs font-semibold">{item.label}</div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Urgency Text */}
-            <motion.p
-              animate={{
-                opacity: [0.7, 1, 0.7]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity
-              }}
-              className="text-center text-black font-bold mt-4 text-sm md:text-base"
-            >
-              ⚡ Offre limitée - Plus que {timeLeft.hours}h {timeLeft.minutes}m ! ⚡
-            </motion.p>
-          </motion.div>
-        </div>
-      </motion.div>
-
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
