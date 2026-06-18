@@ -174,8 +174,23 @@ export default function FreeTrial() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      {/* Back to Home button — top */}
+      <div className="container mx-auto px-4 pt-24 pb-0">
+        <motion.button
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+          whileHover={{ x: -4 }}
+          onClick={() => window.location.href = '/'}
+          className="flex items-center space-x-2 text-gray-400 hover:text-white bg-gray-800/60 hover:bg-gray-700/80 border border-gray-700 hover:border-red-500/50 px-4 py-2 rounded-full transition-all duration-200 text-sm font-medium"
+        >
+          <Icon icon="mdi:arrow-left" className="w-4 h-4" />
+          <span>{t('pricing.back_to_home')}</span>
+        </motion.button>
+      </div>
+
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -447,6 +462,28 @@ export default function FreeTrial() {
             ))}
           </motion.div>
         </motion.div>
+
+          {/* Back to Home — bottom */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="mt-12 text-center"
+          >
+            <motion.button
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              onClick={() => window.location.href = '/'}
+              className="inline-flex items-center space-x-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-red-500/60 text-gray-300 hover:text-white px-8 py-3.5 rounded-2xl font-semibold transition-all duration-200 shadow-lg"
+            >
+              <Icon icon="mdi:home" className="w-5 h-5 text-red-500" />
+              <span>{t('pricing.back_to_home')}</span>
+              <Icon icon="mdi:arrow-right" className="w-4 h-4 text-gray-500" />
+            </motion.button>
+            <p className="text-gray-600 text-xs mt-3">
+              NinhoTV © {new Date().getFullYear()}
+            </p>
+          </motion.div>
       </div>
     </div>
   );

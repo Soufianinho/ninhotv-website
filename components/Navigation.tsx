@@ -21,7 +21,8 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
     { code: 'en', name: 'English', flag: '/flags/gb.svg' },
     { code: 'nl', name: 'Nederlands', flag: '/flags/nl.svg' },
     { code: 'es', name: 'Español', flag: '/flags/es.svg' },
-    { code: 'ar', name: 'العربية', flag: '/flags/sa.svg' }    
+    { code: 'no', name: 'Norsk', flag: '/flags/no.svg' },
+    { code: 'ar', name: 'العربية', flag: '/flags/sa.svg' }
   ];
 
   const handleLanguageChange = (langCode: string) => {

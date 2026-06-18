@@ -23,15 +23,36 @@ export const universalPricing: PricingConfig = {
 
 // Swedish pricing in SEK
 export const swedishPricing: PricingConfig = {
-  1: { price: 149},
-  3: { price: 249},
-  6: { price: 349},
-  12: { price: 549}
+  1: { price: 149 },
+  3: { price: 249 },
+  6: { price: 349 },
+  12: { price: 549 }
 };
+
+// Norwegian pricing in NOK
+export const norwegianPricing: PricingConfig = {
+  1: { price: 149 },
+  3: { price: 249 },
+  6: { price: 349 },
+  12: { price: 549 }
+};
+
+// World Cup offer price per language
+export const worldCupPrice: Record<string, { amount: number; label: string }> = {
+  sv: { amount: 225, label: '225 kr' },
+  no: { amount: 225, label: '225 kr' },
+  default: { amount: 20, label: '20€' }
+};
+
+export function getWorldCupPrice(language: string) {
+  return worldCupPrice[language] ?? worldCupPrice.default;
+}
 
 // Get pricing based on language
 export function getPricingByLanguage(language: string): PricingConfig {
-  return language === 'sv' ? swedishPricing : universalPricing;
+  if (language === 'sv') return swedishPricing;
+  if (language === 'no') return norwegianPricing;
+  return universalPricing;
 }
 
 // Get pricing for specific duration (universal)
@@ -41,47 +62,61 @@ export function getPriceForDuration(months: 1 | 3 | 6 | 12, language: string): P
 
 // Format price display
 export function formatPrice(price: number, language: string): string {
-  if (language === 'sv') {
-    return `${price.toFixed(2)} kr`; // Swedish krona with 2 decimal places
+  if (language === 'sv' || language === 'no') {
+    return `${Math.round(price)} kr`;
   }
-  return `${price.toFixed(2)}€`; // Euro symbol with 2 decimal places for other languages
+  return `${price.toFixed(2)}€`;
 }
 
 // Get all pricing options for language
 export function getAllPricingOptions(language: string) {
   const pricing = getPricingByLanguage(language);
-  
+
+  const period = (sv: string, no: string, fr: string, def: string) => {
+    if (language === 'sv') return sv;
+    if (language === 'no') return no;
+    if (language === 'fr') return fr;
+    return def;
+  };
+
+  const desc = (sv: string, no: string, fr: string, def: string) => {
+    if (language === 'sv') return sv;
+    if (language === 'no') return no;
+    if (language === 'fr') return fr;
+    return def;
+  };
+
   return [
     {
       months: 1,
       price: pricing[1].price,
       originalPrice: pricing[1].originalPrice,
-      period: language === 'fr' ? '1 mois' : language === 'sd' ? '1 شهر' : language === 'sv' ? '1 månad' : '1 month',
-      description: language === 'fr' ? 'Idéal pour tester' : language === 'sd' ? 'مثالي للاختبار' : language === 'sv' ? 'Perfekt för testning' : 'Perfect for testing',
+      period: period('1 månad', '1 måned', '1 mois', '1 month'),
+      description: desc('Perfekt för testning', 'Perfekt for testing', 'Idéal pour tester', 'Perfect for testing'),
       popular: false
     },
     {
       months: 3,
       price: pricing[3].price,
       originalPrice: pricing[3].originalPrice,
-      period: language === 'fr' ? '3 mois' : language === 'sd' ? '3 أشهر' : language === 'sv' ? '3 månader' : '3 months',
-      description: language === 'fr' ? 'Bon choix' : language === 'sd' ? 'اختيار جيد' : language === 'sv' ? 'Bra val' : 'Good choice',
+      period: period('3 månader', '3 måneder', '3 mois', '3 months'),
+      description: desc('Bra val', 'Godt valg', 'Bon choix', 'Good choice'),
       popular: false
     },
     {
       months: 6,
       price: pricing[6].price,
       originalPrice: pricing[6].originalPrice,
-      period: language === 'fr' ? '6 mois' : language === 'sd' ? '6 أشهر' : language === 'sv' ? '6 månader' : '6 months',
-      description: language === 'fr' ? 'Excellent rapport' : language === 'sd' ? 'قيمة ممتازة' : language === 'sv' ? 'Utmärkt värde' : 'Great value',
+      period: period('6 månader', '6 måneder', '6 mois', '6 months'),
+      description: desc('Utmärkt värde', 'Utmerket verdi', 'Excellent rapport', 'Great value'),
       popular: false
     },
     {
       months: 12,
       price: pricing[12].price,
       originalPrice: pricing[12].originalPrice,
-      period: language === 'fr' ? '12 mois' : language === 'sd' ? '12 شهر' : language === 'sv' ? '12 månader' : '12 months',
-      description: language === 'fr' ? 'Le plus populaire' : language === 'sd' ? 'الأكثر شعبية' : language === 'sv' ? 'Mest populär' : 'Most popular',
+      period: period('12 månader', '12 måneder', '12 mois', '12 months'),
+      description: desc('Mest populär', 'Mest populær', 'Le plus populaire', 'Most popular'),
       popular: true
     }
   ];

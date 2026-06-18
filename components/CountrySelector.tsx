@@ -52,6 +52,15 @@ const countries = [
     glow: '#AA151B',
     stripe: ['#AA151B', '#F1BF00', '#AA151B'],
   },
+  {
+    name: 'Norge',
+    nativeName: 'Norge',
+    flagIcon: 'twemoji:flag-norway',
+    language: 'no' as Language,
+    langLabel: 'Norsk',
+    glow: '#EF2B2D',
+    stripe: ['#EF2B2D', '#FFFFFF', '#002868'],
+  },
 ];
 
 const STORAGE_KEY = 'ninhotv-country-selected';
@@ -134,7 +143,7 @@ export default function CountrySelector() {
             </motion.div>
 
             {/* Country cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 w-full">
               {countries.map((country, i) => {
                 const isSelected = selected === country.name;
                 return (

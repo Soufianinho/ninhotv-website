@@ -21,7 +21,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-20">
+    <section id="home" className="relative min-h-[65vh] flex items-center justify-center bg-black overflow-hidden pt-20">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -85,7 +85,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-4 leading-tight"
             >
               {t('hero.title')}
               <span className="block text-red-500">{t('hero.subtitle')}</span>
@@ -95,7 +95,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-sm md:text-xl text-gray-300 mb-5 max-w-2xl mx-auto lg:mx-0"
             >
               {t('hero.description')}
               <span className="block text-green-400 font-medium mt-2">✓ {t('features.hd_quality')} ✓ {t('features.uk_servers')} ✓ {t('features.support')} ✓ {t('features.compatible')}</span>
@@ -331,7 +331,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto lg:mx-0"
+              className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto lg:mx-0"
             >
               {[
                 { icon: "mdi:television", label: "33,000+ Channels", value: "Live TV" },
