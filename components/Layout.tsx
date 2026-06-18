@@ -7,6 +7,7 @@ import Navigation from './Navigation';
 import BottomNavigation from './BottomNavigation';
 import Footer from './Footer';
 import ChatWidget from './ChatWidget';
+import CountrySelector from './CountrySelector';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -39,6 +40,7 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <CountrySelector />
       <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       
       {/* Mobile Menu Overlay */}

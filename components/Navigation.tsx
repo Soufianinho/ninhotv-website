@@ -30,9 +30,8 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
 
   // Handle scroll effect
   if (typeof window !== 'undefined') {
-    window.addEventListener('scroll', () => {
-      setIsScrolled(window.scrollY > 20);
-    });
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
   }
 
   const scrollToSection = (sectionId: string) => {
@@ -66,7 +65,9 @@ export default function Navigation({ isMenuOpen, setIsMenuOpen }: NavigationProp
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/95 backdrop-blur-md' : 'bg-transparent'
+        isScrolled
+          ? 'bg-black/95 backdrop-blur-md border-b border-red-500/20 shadow-lg shadow-black/50'
+          : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4">

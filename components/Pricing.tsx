@@ -20,27 +20,37 @@ export default function Pricing() {
     3: 2.8      // 100% more
   };
 
+  const monthlyBasePrice = pricingOptions.find(p => p.months === 1)?.price ?? 14.99;
+
   // Calculate plans based on selected devices and language
-  const plans = pricingOptions.map((plan) => ({
-    ...plan,
-    name: plan.period,
-    basePrice: plan.price,
-    period: plan.period,
-    color: plan.months === 1 ? 'from-gray-600 to-gray-700' : 
-           plan.months === 3 ? 'from-blue-600 to-blue-700' : 
-           plan.months === 6 ? 'from-red-500 to-red-600' : 
-           'from-purple-600 to-purple-700',
-    price: formatPrice(plan.price * devicePricing[selectedDevices as keyof typeof devicePricing], language),
-    features: [
-      '33,000+ Live Channels',
-      '150,000+ Movies & VOD',
-      t('features.hd_quality'),
-      `${selectedDevices} ${t('pricing.devices')}${selectedDevices > 1 ? 's' : ''}`,
-      'Fast UK Servers',
-      '24/7 Support'
-    ],
-    popular: plan.popular
-  }));
+  const plans = pricingOptions.map((plan) => {
+    const totalPrice = plan.price * devicePricing[selectedDevices as keyof typeof devicePricing];
+    const monthlyEquivalent = totalPrice / plan.months;
+    const fullMonthlyTotal = monthlyBasePrice * devicePricing[selectedDevices as keyof typeof devicePricing] * plan.months;
+    const savingsPct = plan.months > 1 ? Math.round((1 - totalPrice / fullMonthlyTotal) * 100) : 0;
+    return {
+      ...plan,
+      name: plan.period,
+      basePrice: plan.price,
+      period: plan.period,
+      color: plan.months === 1 ? 'from-gray-600 to-gray-700' :
+             plan.months === 3 ? 'from-blue-600 to-blue-700' :
+             plan.months === 6 ? 'from-red-500 to-red-600' :
+             'from-purple-600 to-purple-700',
+      price: formatPrice(totalPrice, language),
+      perMonth: formatPrice(monthlyEquivalent, language),
+      savingsPct,
+      features: [
+        '33,000+ Live Channels',
+        '150,000+ Movies & VOD',
+        t('features.hd_quality'),
+        `${selectedDevices} ${t('pricing.devices')}${selectedDevices > 1 ? 's' : ''}`,
+        'Fast UK Servers',
+        '24/7 Support'
+      ],
+      popular: plan.popular
+    };
+  });
 
   const handleDeviceSelect = (devices: number) => {
     setSelectedDevices(devices);
@@ -205,29 +215,52 @@ export default function Pricing() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className={`relative bg-gray-800 rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
-                plan.popular 
-                  ? 'border-red-500 shadow-2xl shadow-red-500/20' 
-                  : 'border-gray-700 hover:border-red-500/50'
+              className={`relative rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
+                plan.popular
+                  ? 'border-red-500 shadow-2xl shadow-red-500/30 bg-gradient-to-b from-gray-800 to-gray-900'
+                  : 'border-gray-700 hover:border-red-500/50 bg-gray-800'
               }`}
             >
-              {/* Popular Badge */}
+              {/* Popular animated glow ring */}
               {plan.popular && (
-                <div className="absolute top-0 right-0 bg-red-500 text-white px-4 py-2 text-sm font-bold rounded-bl-xl">
-                  {t('pricing.most_popular')}
+                <div className="absolute inset-0 rounded-2xl pointer-events-none">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-red-500/10 to-transparent"></div>
                 </div>
               )}
 
-              <div className="p-8">
+              {/* Savings badge */}
+              {plan.savingsPct > 0 && (
+                <div className={`absolute top-3 left-3 text-xs font-bold px-2.5 py-1 rounded-full ${
+                  plan.popular ? 'bg-yellow-400 text-gray-900' : 'bg-green-600 text-white'
+                }`}>
+                  Save {plan.savingsPct}%
+                </div>
+              )}
+
+              {/* Popular Badge */}
+              {plan.popular && (
+                <div className="absolute top-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 text-sm font-bold rounded-bl-xl flex items-center space-x-1">
+                  <Icon icon="mdi:crown" className="w-4 h-4" />
+                  <span>{t('pricing.most_popular')}</span>
+                </div>
+              )}
+
+              <div className="p-8 pt-10">
                 {/* Plan Name */}
                 <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-                
+
                 {/* Price */}
                 <div className="mb-6">
-                  <div className="flex items-baseline">
-                    <span className="text-3xl font-bold text-white">{plan.price}</span>
-                    <span className="text-gray-400 ml-1">{plan.period}</span>
+                  <div className="flex items-baseline gap-1">
+                    <span className={`font-black text-white ${plan.popular ? 'text-4xl' : 'text-3xl'}`}>{plan.price}</span>
+                    <span className="text-gray-400 text-sm">total</span>
                   </div>
+                  {plan.months > 1 && (
+                    <div className="text-green-400 text-sm font-medium mt-1">
+                      <Icon icon="mdi:tag" className="inline-block w-3.5 h-3.5 mr-1" />
+                      {plan.perMonth}/month
+                    </div>
+                  )}
                   {plan.originalPrice && (
                     <div className="text-gray-500 line-through text-sm">{plan.originalPrice}</div>
                   )}
@@ -237,7 +270,7 @@ export default function Pricing() {
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <Icon icon="mdi:check-circle" className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                      <Icon icon="mdi:check-circle" className={`w-5 h-5 mr-3 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-red-400' : 'text-green-500'}`} />
                       <span className="text-gray-300 text-sm">{feature}</span>
                     </li>
                   ))}
@@ -248,13 +281,12 @@ export default function Pricing() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleSubscribe(plan.name)}
-                  className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
+                  className={`w-full py-3 rounded-xl font-semibold transition-all duration-200 ${
                     plan.popular
-                      ? 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700'
+                      ? 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 shadow-lg shadow-red-500/25'
                       : 'bg-gray-700 text-white hover:bg-gray-600'
                   }`}
                 >
-                  {plan.popular && <Icon icon="mdi:crown" className="inline-block w-4 h-4 mr-2" />}
                   {t('pricing.get_started')}
                 </motion.button>
               </div>
