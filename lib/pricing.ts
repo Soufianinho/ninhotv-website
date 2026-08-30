@@ -37,17 +37,6 @@ export const norwegianPricing: PricingConfig = {
   12: { price: 549 }
 };
 
-// World Cup offer price per language
-export const worldCupPrice: Record<string, { amount: number; label: string }> = {
-  sv: { amount: 225, label: '225 kr' },
-  no: { amount: 225, label: '225 kr' },
-  default: { amount: 20, label: '20€' }
-};
-
-export function getWorldCupPrice(language: string) {
-  return worldCupPrice[language] ?? worldCupPrice.default;
-}
-
 // Get pricing based on language
 export function getPricingByLanguage(language: string): PricingConfig {
   if (language === 'sv') return swedishPricing;

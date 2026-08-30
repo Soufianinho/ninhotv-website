@@ -8,7 +8,6 @@ import Pricing from '@/components/Pricing';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import PaymentMethods from '@/components/PaymentMethods';
-import WorldCupOffer from '@/components/WorldCupOffer';
 
 export const metadata: Metadata = {
   title: 'NinhoTV - Best IPTV UK Service | 33,000+ Live Channels | Premium Streaming',
@@ -40,7 +39,6 @@ export default function HomePage() {
   return (
     <Layout>
       <Hero />
-      <WorldCupOffer />
       <Pricing />
       <Channels />
       <AppScreenshots />
